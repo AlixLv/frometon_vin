@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- novalidate permet d'empêcher la validation automatique du navigateur et forcer celle de Django  -->
+<form method="POST" novalidate>
+    <!-- template de protection contre les injection de code malaicieux à travers le bouton d'un formulaire ou du javascript -->
+    {% csrf_token %}
+    <h2>Login</h2>
+    <!-- le formulaire Django est affiché comme des paragraphes HTML avec les balises <p> -->
+        {{form.as_p}}
+    <input type="submit" value="Login" />
+</form>
+{% endblock content %}
