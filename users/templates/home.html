@@ -1,1 +1,8 @@
-<h2>Bonjour </h2>
+<h1>FROMETON</h1>
+{% if user.is_authenticated %}
+    <h3>Bonjour, {{user.username}}</h3>
+    <p><a href="{% url 'logout' %}">Log out</a></p>
+{% else %}
+    <p>Vous n'êtes pas connecté.e</p>
+    <p><a href="{% url 'login' %}">Login</a></p>
+{% endif %}        

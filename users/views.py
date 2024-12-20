@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
 from .forms import LoginForm
 from django.contrib import messages
-from django.contrib.auth import login as auth_login, authenticate
+from django.contrib.auth import login as auth_login, authenticate, logout 
 from django.http import HttpResponse
 from django.template import RequestContext
 
-def login(request):
+def login_view(request):
     #si la méthode est POST, soumission du formulaire:
     if request.method == 'POST':
         form = LoginForm(request.POST)
@@ -16,10 +16,9 @@ def login(request):
             #fonction authenticate() vérifie les données postées, si les données sont valides, une instance de la classe User est retournée
             user = authenticate(request, username=username, email=email, password=password)
             if user is not None:
-                print(f"🌈 COUCOU")
                 #fonction login() créée un id de session dans le server et le renvoie au navigateur sous la forme d'un cookie
                 auth_login(request, user)
-                messages.success(request, f'Bonjour {user.username.title()}')
+                print(f"🌈 {request}")
                 return redirect('home')
             else:
              #si le formulaire n'est pas valide ou que le user n'est pas authentifié    
@@ -32,7 +31,13 @@ def login(request):
      
      #rendu du templace avec le formulaire   
     return render(request, './login.html', {'form': form})
-    
+
+
+def logout_view(request):
+    logout(request) 
+       
+    return redirect('goodbye')
+
 
 def home(request):
     username = request.user.username
@@ -41,3 +46,12 @@ def home(request):
         "username": username
     }
     return render(request, './home.html', context)
+
+
+def goodbye(request):
+    username = request.user.username
+    
+    context = {
+        "username": username
+    }
+    return render(request, './goodbye.html', context)
