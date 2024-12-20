@@ -18,7 +18,6 @@ def login_view(request):
             if user is not None:
                 #fonction login() créée un id de session dans le server et le renvoie au navigateur sous la forme d'un cookie
                 auth_login(request, user)
-                print(f"🌈 {request}")
                 return redirect('home')
             else:
              #si le formulaire n'est pas valide ou que le user n'est pas authentifié    
@@ -26,7 +25,6 @@ def login_view(request):
     
     else:  
         #si la méthode est GET, on affiche le formulaire 
-        print(f"⭐️ HEY")
         form = LoginForm() 
      
      #rendu du templace avec le formulaire   
