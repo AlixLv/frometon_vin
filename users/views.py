@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from .forms import LoginForm
+from .forms import LoginForm, RegisterForm
 from django.contrib import messages
-from django.contrib.auth import login as auth_login, authenticate, logout 
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login as auth_login, authenticate, logout
+
+
 
 def login_view(request):
     #si la méthode est POST, soumission du formulaire:
@@ -41,14 +42,15 @@ def logout_view(request):
 def register_view(request):
     #si la méthode est POST, on créée une instance du formulaire 
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
+        form = RegisterForm(request.POST)
         #si le formulaire est valid, on l'enregistre avec les nouvelles data
         if form.is_valid():
-            form.save()
+            #form.save() se charge de cleaner les data
+            user = form.save()
             return redirect('home')
     else:
         #si la méthode est GET, on affiche le formulaire 
-        form = UserCreationForm()    
+        form = RegisterForm()    
     #si le formulaire n'est pas valide, on affiche de nouveau le formulaire vide    
     return render(request, './register.html', {"form": form})
 
