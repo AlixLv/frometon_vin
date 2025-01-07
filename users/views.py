@@ -27,7 +27,7 @@ def login_view(request):
         #si la méthode est GET, on affiche le formulaire 
         form = LoginForm() 
      
-     #rendu du templace avec le formulaire   
+     #rendu du template avec le formulaire   
     return render(request, './login.html', {'form': form})
 
 

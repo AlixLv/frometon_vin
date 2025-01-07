@@ -1,0 +1,392 @@
+[
+    {
+      "model": "products.cheese",
+      "pk": 1,
+      "fields": {
+        "name": "Abondance",
+        "family": "Pâte pressée cuite",
+        "type_of_milk": "Vache cru",
+        "region": "Haute-Savoie",
+        "description": "Goût fruité et noisette, pâte souple et fondante",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 2,
+      "fields": {
+        "name": "Beaufort",
+        "family": "Pâte pressée cuite",
+        "type_of_milk": "Vache cru",
+        "region": "Savoie",
+        "description": "Arômes complexes et délicats, notes florales et fruitées",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 3,
+      "fields": {
+        "name": "Bleu d'Auvergne",
+        "family": "Pâte persillée",
+        "type_of_milk": "Vache pasteurisé",
+        "region": "Auvergne",
+        "description": "Saveur corsée, texture crémeuse et fondante",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 4,
+      "fields": {
+        "name": "Bleu de Gex Haut-Jura",
+        "family": "Pâte persillée",
+        "type_of_milk": "Vache cru",
+        "region": "Franche-Comté",
+        "description": "Goût doux et parfumé, légèrement salé",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 5,
+      "fields": {
+        "name": "Bleu des Causses",
+        "family": "Pâte persillée",
+        "type_of_milk": "Vache cru",
+        "region": "Midi-Pyrénées",
+        "description": "Saveur puissante et typée, texture fondante",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 6,
+      "fields": {
+        "name": "Brie de Meaux",
+        "family": "Pâte molle à croûte fleurie",
+        "type_of_milk": "Vache cru",
+        "region": "Île-de-France",
+        "description": "Goût crémeux et subtil, arômes de noisette et de champignon",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 7,
+      "fields": {
+        "name": "Brie de Melun",
+        "family": "Pâte molle à croûte fleurie",
+        "type_of_milk": "Vache cru",
+        "region": "Île-de-France",
+        "description": "Plus corsé que le Brie de Meaux, goût prononcé",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 8,
+      "fields": {
+        "name": "Cantal",
+        "family": "Pâte pressée non cuite",
+        "type_of_milk": "Vache cru",
+        "region": "Auvergne",
+        "description": "Goût lacté quand jeune, plus corsé avec l'affinage",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 9,
+      "fields": {
+        "name": "Chaource",
+        "family": "Pâte molle à croûte fleurie",
+        "type_of_milk": "Vache cru",
+        "region": "Champagne-Ardenne",
+        "description": "Texture crémeuse, goût délicat et légèrement salé",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 10,
+        "fields": {
+        "name": "Comté",
+        "family": "Pâte pressée cuite",
+        "type_of_milk": "Vache cru",
+        "region": "Franche-Comté",
+        "description": "Arômes complexes variant selon l'affinage : fruité, grillé, épicé",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 11,
+      "fields": {
+        "name": "Époisses",
+        "family": "Pâte molle à croûte lavée",
+        "type_of_milk": "Vache cru",
+        "region": "Bourgogne",
+        "description": "Goût puissant et raffiné, texture crémeuse",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 12,
+      "fields": {
+        "name": "Fourme d'Ambert",
+        "family": "Pâte persillée",
+        "type_of_milk": "Vache pasteurisé",
+        "region": "Auvergne",
+        "description": "Saveur douce et fruitée, texture fondante",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 13,
+      "fields": {
+        "name": "Laguiole",
+        "family": "Pâte pressée non cuite",
+        "type_of_milk": "Vache cru",
+        "region": "Midi-Pyrénées",
+        "description": "Goût fruité et corsé, texture ferme",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 14,
+      "fields": {
+        "name": "Langres",
+        "family": "Pâte molle à croûte lavée",
+        "type_of_milk": "Vache cru",
+        "region": "Champagne-Ardenne",
+        "description": "Saveur forte et salée, texture crémeuse",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+    }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 15,
+      "fields": {
+        "name": "Livarot",
+        "family": "Pâte molle à croûte lavée",
+        "type_of_milk": "Vache cru",
+        "region": "Normandie",
+        "description": "Goût prononcé et caractéristique, texture souple",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 16,
+      "fields": {
+        "name": "Maroilles",
+        "family": "Pâte molle à croûte lavée",
+        "type_of_milk": "Vache cru",
+        "region": "Nord-Pas-de-Calais",
+        "description": "Saveur forte et typée, texture crémeuse",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 17,
+      "fields": {
+        "name": "Mont d'Or",
+        "family": "Pâte molle à croûte lavée",
+        "type_of_milk": "Vache cru",
+        "region": "Franche-Comté",
+        "description": "Texture crémeuse à coulante, goût boisé et lacté",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 18,
+      "fields": {
+        "name": "Munster",
+        "family": "Pâte molle à croûte lavée",
+        "type_of_milk": "Vache cru",
+        "region": "Alsace",
+        "description": "Goût prononcé et corsé, texture souple",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 19,
+      "fields": {
+        "name": "Neufchâtel",
+        "family": "Pâte molle à croûte fleurie",
+        "type_of_milk": "Vache cru",
+        "region": "Normandie",
+        "description": "Goût de champignon, texture crémeuse",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 20,
+      "fields": {
+        "name": "Ossau-Iraty",
+        "family": "Pâte pressée non cuite",
+        "type_of_milk": "Brebis cru",
+        "region": "Aquitaine",
+        "description": "Goût fruité et noisetté, texture fondante",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 21,
+      "fields": {
+      "name": "Pélardon",
+        "family": "Pâte molle",
+        "type_of_milk": "Chèvre cru",
+        "region": "Languedoc-Roussillon",
+        "description": "Goût caprin prononcé, texture fine",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 22,
+      "fields": {
+        "name": "Pont-l'Évêque",
+        "family": "Pâte molle à croûte lavée",
+        "type_of_milk": "Vache cru",
+        "region": "Normandie",
+        "description": "Goût fruité et léger, texture souple",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 23,
+      "fields": {
+        "name": "Reblochon",
+        "family": "Pâte pressée non cuite",
+        "type_of_milk": "Vache cru",
+        "region": "Haute-Savoie",
+        "description": "Goût fruité et subtil, texture onctueuse",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 24,
+      "fields": {
+        "name": "Rocamadour",
+        "family": "Pâte molle",
+        "type_of_milk": "Chèvre cru",
+        "region": "Midi-Pyrénées",
+        "description": "Goût caprin doux, texture crémeuse",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 25,
+      "fields": {
+        "name": "Roquefort",
+        "family": "Pâte persillée",
+        "type_of_milk": "Brebis cru",
+        "region": "Midi-Pyrénées",
+        "description": "Saveur puissante et complexe, texture crémeuse",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 26,
+      "fields": {
+        "name": "Saint-Nectaire",
+        "family": "Pâte pressée non cuite",
+        "type_of_milk": "Vache cru",
+        "region": "Auvergne",
+        "description": "Goût de noisette et de champignon, texture fondante",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 27,
+      "fields": {
+        "name": "Salers",
+        "family": "Pâte pressée non cuite",
+        "type_of_milk": "Vache cru",
+        "region": "Auvergne",
+        "description": "Goût fruité et persistant, texture ferme",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 28,
+      "fields": {
+        "name": "Selles-sur-Cher",
+        "family": "Pâte molle",
+        "type_of_milk": "Chèvre cru",
+        "region": "Centre-Val de Loire",
+        "description": "Goût caprin typé, texture fine et crémeuse",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 29,
+      "fields": {
+        "name": "Tome des Bauges",
+        "family": "Pâte pressée non cuite",
+        "type_of_milk": "Vache cru",
+        "region": "Savoie",
+        "description": "Goût fruité et corsé, notes de noisette",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    },
+    {
+      "model": "products.cheese",
+      "pk": 30,
+      "fields": {
+        "name": "Valençay",
+        "family": "Pâte molle",
+        "type_of_milk": "Chèvre cru",
+        "region": "Centre-Val de Loire",
+        "description": "Goût caprin prononcé, texture crémeuse",
+        "created_at": "2025-01-07T12:00:00Z",
+        "updated_at": "2025-01-07T12:00:00Z"
+      }
+    }
+]

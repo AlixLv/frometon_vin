@@ -34,6 +34,7 @@ AUTH_USER_MODEL = 'users.CustomUser'
 
 INSTALLED_APPS = [
     'users.apps.UsersConfig',
+    'products',
     'frometon',
     'django.contrib.admin',
     'django.contrib.auth',

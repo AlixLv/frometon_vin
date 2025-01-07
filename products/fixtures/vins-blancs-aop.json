@@ -1,0 +1,227 @@
+[
+      {
+        "model": "products.wine",
+        "pk": 1,
+        "fields": {
+            "name": "Montrachet Grand Cru",
+            "appellation": "Montrachet Grand Cru",
+            "vineyard": "Domaine de la Romanée-Conti",
+            "grape_variety": "Chardonnay",
+            "color": "Blanc",
+            "year": "2018",
+            "description": "Vin d'exception aux arômes de fleurs blanches, de miel et de fruits exotiques. Texture crémeuse et finale interminable.",
+            "created_at": "2025-01-07T12:00:00Z",
+            "updated_at": "2025-01-07T12:00:00Z"
+        }
+      },
+      {
+        "model": "products.wine",
+        "pk": 2,
+        "fields": {
+            "name": "Chablis Grand Cru Les Clos",
+            "appellation": "Chablis Grand Cru",
+            "vineyard": "Domaine William Fèvre",
+            "grape_variety": "Chardonnay",
+            "color": "Blanc",
+            "year": "2019",
+            "description": "Vin minéral aux arômes d'agrumes, de silex et de pomme verte. Grande pureté et tension remarquable.",
+            "created_at": "2025-01-07T12:00:00Z",
+            "updated_at": "2025-01-07T12:00:00Z"
+        }
+      },
+      {
+        "model": "products.wine",
+        "pk": 3,
+        "fields": {
+            "name": "Château d'Yquem",
+            "appellation": "Sauternes",
+            "vineyard": "Château d'Yquem",
+            "grape_variety": "Sémillon, Sauvignon Blanc",
+            "color": "Blanc",
+            "year": "2015",
+            "description": "Vin liquoreux d'exception aux arômes d'abricot, de miel et d'épices douces. Onctueux avec une acidité parfaitement équilibrée.",
+            "created_at": "2025-01-07T12:00:00Z",
+            "updated_at": "2025-01-07T12:00:00Z"
+        }
+      },
+      {
+        "model": "products.wine",
+        "pk": 4,
+        "fields": {
+            "name": "Corton-Charlemagne Grand Cru",
+            "appellation": "Corton-Charlemagne Grand Cru",
+            "vineyard": "Domaine Louis Latour",
+            "grape_variety": "Chardonnay",
+            "color": "Blanc",
+            "year": "2018",
+            "description": "Vin puissant aux arômes de poire, de noisette et de vanille. Structure imposante et finale persistante.",
+            "created_at": "2025-01-07T12:00:00Z",
+            "updated_at": "2025-01-07T12:00:00Z"
+        }
+      },
+      {
+        "model": "products.wine",
+        "pk": 5,
+        "fields": {
+            "name": "Puligny-Montrachet Les Pucelles",
+            "appellation": "Puligny-Montrachet 1er Cru",
+            "vineyard": "Domaine Leflaive",
+            "grape_variety": "Chardonnay",
+            "color": "Blanc",
+            "year": "2019",
+            "description": "Vin élégant aux arômes de citron confit, de fleurs blanches et de pierre à fusil. Texture soyeuse et finale minérale.",
+            "created_at": "2025-01-07T12:00:00Z",
+            "updated_at": "2025-01-07T12:00:00Z"
+        }
+      },
+      {
+        "model": "products.wine",
+        "pk": 6,
+        "fields": {
+            "name": "Hermitage Blanc",
+            "appellation": "Hermitage",
+            "vineyard": "Jean-Louis Chave",
+            "grape_variety": "Marsanne, Roussanne",
+            "color": "Blanc",
+            "year": "2017",
+            "description": "Vin riche aux arômes de fruits blancs mûrs, de miel et d'amande. Grande complexité et longueur remarquable.",
+            "created_at": "2025-01-07T12:00:00Z",
+            "updated_at": "2025-01-07T12:00:00Z"
+        }
+      },
+      {
+        "model": "products.wine",
+        "pk": 7,
+        "fields": {
+            "name": "Meursault Les Perrières",
+            "appellation": "Meursault 1er Cru",
+            "vineyard": "Domaine Roulot",
+            "grape_variety": "Chardonnay",
+            "color": "Blanc",
+            "year": "2018",
+            "description": "Vin raffiné aux arômes de citron, de pomme et de noisette grillée. Minéralité intense et finale persistante.",
+            "created_at": "2025-01-07T12:00:00Z",
+            "updated_at": "2025-01-07T12:00:00Z"
+        }
+      },
+      {
+        "model": "products.wine",
+        "pk": 8,
+        "fields": {
+            "name": "Condrieu La Doriane",
+            "appellation": "Condrieu",
+            "vineyard": "Guigal",
+            "grape_variety": "Viognier",
+            "color": "Blanc",
+            "year": "2020",
+            "description": "Vin aromatique aux notes d'abricot, de pêche et de fleurs blanches. Texture onctueuse et finale équilibrée.",
+            "created_at": "2025-01-07T12:00:00Z",
+            "updated_at": "2025-01-07T12:00:00Z"
+        }
+      },
+      {
+        "model": "products.wine",
+        "pk": 9,
+        "fields": {
+            "name": "Trimbach Clos Sainte Hune",
+            "appellation": "Alsace",
+            "vineyard": "Maison Trimbach",
+            "grape_variety": "Riesling",
+            "color": "Blanc",
+            "year": "2016",
+            "description": "Vin sec aux arômes d'agrumes, de pétrole et de minéraux. Structure ciselée et finale d'une grande pureté.",
+            "created_at": "2025-01-07T12:00:00Z",
+            "updated_at": "2025-01-07T12:00:00Z"
+        }
+      },
+      {
+        "model": "products.wine",
+        "pk": 10,
+        "fields": {
+            "name": "Didier Dagueneau Silex",
+            "appellation": "Pouilly-Fumé",
+            "vineyard": "Domaine Didier Dagueneau",
+            "grape_variety": "Sauvignon Blanc",
+            "color": "Blanc",
+            "year": "2019",
+            "description": "Vin intense aux arômes de pamplemousse, de silex et d'herbes fraîches. Tension remarquable et finale complexe.",
+            "created_at": "2025-01-07T12:00:00Z",
+            "updated_at": "2025-01-07T12:00:00Z"
+        }
+      },
+      {
+        "model": "products.wine",
+        "pk": 11,
+        "fields": {
+            "name": "Coche-Dury Meursault",
+            "appellation": "Meursault",
+            "vineyard": "Domaine Coche-Dury",
+            "grape_variety": "Chardonnay",
+            "color": "Blanc",
+            "year": "2018",
+            "description": "Vin précis aux arômes de citron, de pomme et de pain grillé. Grande tension et finale minérale.",
+            "created_at": "2025-01-07T12:00:00Z",
+            "updated_at": "2025-01-07T12:00:00Z"
+        }
+      },
+      {
+        "model": "products.wine",
+        "pk": 12,
+        "fields": {
+            "name": "Château Smith Haut Lafitte Blanc",
+            "appellation": "Pessac-Léognan",
+            "vineyard": "Château Smith Haut Lafitte",
+            "grape_variety": "Sauvignon Blanc, Sémillon",
+            "color": "Blanc",
+            "year": "2019",
+            "description": "Vin complexe aux arômes d'agrumes, de fruits exotiques et de vanille. Structure ample et finale longue.",
+            "created_at": "2025-01-07T12:00:00Z",
+            "updated_at": "2025-01-07T12:00:00Z"
+        }
+      },
+      {
+        "model": "products.wine",
+        "pk": 13,
+        "fields": {
+            "name": "Bonneau du Martray Corton-Charlemagne",
+            "appellation": "Corton-Charlemagne Grand Cru",
+            "vineyard": "Domaine Bonneau du Martray",
+            "grape_variety": "Chardonnay",
+            "color": "Blanc",
+            "year": "2017",
+            "description": "Vin majestueux aux arômes de fruits blancs, de noisette et de minéraux. Grande complexité et finale persistante.",
+            "created_at": "2025-01-07T12:00:00Z",
+            "updated_at": "2025-01-07T12:00:00Z"
+        }
+      },
+      {
+        "model": "products.wine",
+        "pk": 14,
+        "fields": {
+            "name": "Egon Müller Scharzhofberger Riesling Trockenbeerenauslese",
+            "appellation": "Mosel",
+            "vineyard": "Weingut Egon Müller",
+            "grape_variety": "Riesling",
+            "color": "Blanc",
+            "year": "2018",
+            "description": "Vin liquoreux d'exception aux arômes de fruits confits, de miel et de fleurs. Équilibre parfait entre sucrosité et acidité.",
+            "created_at": "2025-01-07T12:00:00Z",
+            "updated_at": "2025-01-07T12:00:00Z"
+        }
+      },
+      {
+        "model": "products.wine",
+        "pk": 15,
+            "fields": {
+            "name": "Château Haut-Brion Blanc",
+            "appellation": "Pessac-Léognan",
+            "vineyard": "Château Haut-Brion",
+            "grape_variety": "Sémillon, Sauvignon Blanc",
+            "color": "Blanc",
+            "year": "2018",
+            "description": "Vin prestigieux aux arômes d'agrumes, de pêche blanche et de fleurs. Structure complexe et finale persistante.",
+            "created_at": "2025-01-07T12:00:00Z",
+            "updated_at": "2025-01-07T12:00:00Z"
+        }
+      }
+    ]
