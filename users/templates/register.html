@@ -1,11 +1,10 @@
-<h1>FROMETON</h1>
-
-
+{% extends 'base.html' %}
+<h1>Créez votre compte</h1>
 {% block content %}
-<form method="POST" novalidate>
-    {% csrf_token %}
-    <h2>Inscription</h2>
-        {{form.as_p}}
-    <input type="submit" value="S'inscrire" />
-</form>
+    <form method="POST" novalidate>
+        {% csrf_token %}
+        <h2>Inscription</h2>
+        {{ form.as_p }}
+        <input type="submit" value="S'inscrire" />
+    </form>
 {% endblock content %}

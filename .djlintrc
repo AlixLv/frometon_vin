@@ -1,0 +1,16 @@
+{
+    "indent": 4,
+    "max_line_length": 100,
+    "use_spaces": true,
+    "extend_exclude": ".venv,venv,env,node_modules",
+    "format_css": true,
+    "format_js": true,
+    "profile": "django",
+    "ignore":[
+        "H022",
+    "H029",
+    "H030",
+    "H031",
+    "TOO2"
+]
+}

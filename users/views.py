@@ -45,7 +45,7 @@ def register_view(request):
         if form.is_valid():
             #form.save() se charge de cleaner les data
             user = form.save()
-            return redirect('home')
+            return redirect('login')
     else:
         #si la méthode est GET, on affiche le formulaire 
         form = RegisterForm()    

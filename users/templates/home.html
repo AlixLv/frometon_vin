@@ -1,8 +1,13 @@
-<h1>FROMETON HOMEPAGE</h1>
+{% extends 'base.html' %}
+<h1>Frometon</h1>
 {% if user.is_authenticated %}
-    <h3>Bonjour, {{user.username}}</h3>
-    <p><a href="{% url 'logout' %}">Log out</a></p>
+    <h3>Bonjour, {{ user.username }}</h3>
+    <p>
+        <a href="{% url 'logout' %}">Log out</a>
+    </p>
 {% else %}
     <p>Vous n'êtes pas connecté.e</p>
-    <p><a href="{% url 'login' %}">Login</a></p>
-{% endif %}        
+    <p>
+        <a href="{% url 'login' %}">Login</a>
+    </p>
+{% endif %}
