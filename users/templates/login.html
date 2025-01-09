@@ -4,12 +4,12 @@
     <form method="post" novalidate>
         <!-- template de protection contre les injection de code malaicieux à travers le bouton d'un formulaire ou du javascript -->
         {% csrf_token %}
-        <h2 class="font-bold text-xl">Login</h2>
+        <h2>Login</h2>
         <!-- le formulaire Django est affiché comme des paragraphes HTML avec les balises <p> -->
         {{ form.as_p }}
-        <input type="submit" value="Se connecter" class="b" />
+        <input type="submit" value="Se connecter"/>
     </form>
     <a href="http://127.0.0.1:8000/register">
-        <input type="submit" value="S'inscrire" class="text-orange-300" />
+        <input type="submit" value="S'inscrire" />
     </a>
 {% endblock content %}

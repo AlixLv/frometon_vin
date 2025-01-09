@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import LoginForm, RegisterForm
+from .forms import LoginForm, RegisterForm, SearchForm
 from django.contrib import messages
 from django.contrib.auth import login as auth_login, authenticate, logout
 from products.models import Cheese
@@ -57,8 +57,17 @@ def register_view(request):
 def home(request):
     username = request.user.username
     
+    if request.method == "POST":
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            product_object = form.save()
+            return redirect(search_product_view)
+    else:
+        form = SearchForm()    
+    
     context = {
-        "username": username
+        "username": username,
+        "form": form
     }
     return render(request, './home.html', context)
 
@@ -72,7 +81,9 @@ def goodbye(request):
     return render(request, './goodbye.html', context)
 
 
-def product_detail_view(request, id=None):
+def detail_product_view(request, id=None):
+    print("hey")
+    print("🌺", id)
     product_object = None
     if id is not None:
         id_object = id
@@ -83,3 +94,15 @@ def product_detail_view(request, id=None):
     }
     return render(request, "./product.html", context=context)
 
+
+def search_product_view(request):
+    # if request.method == 'POST':
+    # on choppe le texte de l'input, on fait la requête à la db pour trouver l'id correspondant
+    # on affiche template product.html
+    # else:
+    # on affiche home.html
+    print("coucou")
+    return(detail_product_view(request, id=5))
+    
+ 
+  
