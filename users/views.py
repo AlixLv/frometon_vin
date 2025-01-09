@@ -69,3 +69,7 @@ def goodbye(request):
         "username": username
     }
     return render(request, './goodbye.html', context)
+
+def article_detail_view(request):
+    context = {}
+    return render(request, "./home.html", context=context)

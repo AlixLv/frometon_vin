@@ -1,19 +1,15 @@
 <!-- indication à VSCode qu'il s'agit bien d'un fichier Django HTML -->
 {# django #}
-{% load static %}
-<!-- {% load static tailwind_tags %} -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="{% static 'css/dist/styles.css' %}" rel="stylesheet">
-        <!-- <link href="{% static './src/main.css' %}" rel="stylesheet"> -->
-        {% block head %}<title>Base</title>{% endblock %}
+        {% block head %}<title>Frometon</title>{% endblock %}
     </head>
-    <body class="bg-slate-300 font-sans">
+    <body>
         <!-- ajouter navbar ici avec button register-->
-         <p>NAVBAR</p>
+        <p>NAVBAR</p>
         {% block body %}
             {% block content %}{% endblock %}
         {% endblock %}

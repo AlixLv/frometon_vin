@@ -43,9 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',  
-    'tailwind', 
-    'theme',
-    'django_browser_reload',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +53,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django_browser_reload.middleware.BrowserReloadMiddleware',
 ]
 
 ROOT_URLCONF = 'frometon.urls'
@@ -133,10 +129,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Indication à Django pour trouver le dossier static, situé dans le BASE_DIR frometon
-STATICFILES_DIRS = [BASE_DIR / "theme/static_src"]
+# STATICFILES_DIRS = [BASE_DIR / "static",]
 
-# Register the generated theme app to the project:
-TAILWIND_APP_NAME = 'theme'
 
 INTERNAL_IPS = [
     "127.0.0.1",
