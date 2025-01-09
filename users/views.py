@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import LoginForm, RegisterForm
 from django.contrib import messages
 from django.contrib.auth import login as auth_login, authenticate, logout
+from products.models import Cheese
 
 
 
@@ -70,6 +71,10 @@ def goodbye(request):
     }
     return render(request, './goodbye.html', context)
 
-def article_detail_view(request):
-    context = {}
-    return render(request, "./home.html", context=context)
+
+def product_detail_view(request):
+    context = {
+            "product_object" : Cheese.objects.get(id=3)        
+    }
+    return render(request, "./product.html", context=context)
+
