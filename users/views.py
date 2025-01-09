@@ -72,9 +72,14 @@ def goodbye(request):
     return render(request, './goodbye.html', context)
 
 
-def product_detail_view(request):
+def product_detail_view(request, id=None):
+    product_object = None
+    if id is not None:
+        id_object = id
+        product_object = Cheese.objects.get(id=id)
     context = {
-            "product_object" : Cheese.objects.get(id=3)        
+            "product_object" : product_object, 
+            "id" : id_object       
     }
     return render(request, "./product.html", context=context)
 
