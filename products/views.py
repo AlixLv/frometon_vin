@@ -28,13 +28,17 @@ def detail_product_view(request, id=None):
 def search_product_view(request):
     all_cheeses_names = Cheese.objects.values_list('name', flat=True).distinct()
     
+    # on vérifie qu'on reçoit bien la data:
     if request.session.has_key('query'):
         query = request.session['query']
+        # on itère sur tous les noms de fromages de la db
         for cheese_name in all_cheeses_names:
             if query == cheese_name:
-                print("🍍",cheese_name, type(cheese_name))
+                # on récupère l'objet fromage cherché
                 cheese_to_display = Cheese.objects.filter(name=cheese_name)
+                # on récupère l'id
                 id_cheese = cheese_to_display.values_list('id', flat=True)
+                # id nettoyé, sorti du QuerySet
                 id_to_send = id_cheese[0]  
   
     return(detail_product_view(request, id=id_to_send))

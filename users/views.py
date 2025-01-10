@@ -55,10 +55,10 @@ def register_view(request):
 
 def home(request):
     username = request.user.username
-    print("🍞", request.GET)
+    # on récupère le texte de l'input
     query_dict = request.GET
     query = query_dict.get("q")
-    print("🥕", query)
+    # on transmet la data à la view search_product_view
     if query is not None:
         request.session['query'] = query
         return redirect(search_product_view)
