@@ -8,8 +8,20 @@
         {% block head %}<title>Frometon</title>{% endblock %}
     </head>
     <body>
-        <!-- ajouter navbar ici avec button register-->
-        <p>NAVBAR</p>
+        <nav class="menu">
+                <a href="#">Profil</a>
+                <div>
+                    {% for category in cheese_categories %}
+                    <a href="#">{{ category }}</a>
+                    {% endfor %}
+                </div>
+                <div>
+                    {% for category in wine_categories %}
+                    <a href="#">{{ category }}</a>
+                    {% endfor %}
+                </div>   
+          </nav>
+        
         {% block body %}
             {% block content %}{% endblock %}
         {% endblock %}

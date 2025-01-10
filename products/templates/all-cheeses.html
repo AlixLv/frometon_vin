@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Les fromages</title>
-    </head>
-    <body>
+{% extends 'base.html' %}
+
+    {% block content %}
         <h1>Tous les fromages</h1>
         {% for cheese in cheeses %}
             <h3>{{ cheese.name }}</h3>
@@ -15,5 +10,5 @@
             <p>{{ cheese.description }}</p>
             <br />
         {% endfor %}
-    </body>
-</html>
+    {% endblock content %}    
+

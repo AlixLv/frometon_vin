@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Les vins</title>
-    </head>
-    <body>
+{% extends 'base.html' %}
+
+    {% block content %}
         <h1>Tous les vins</h1>
         <br />
         <h2>Les vins blancs</h2>
@@ -49,5 +44,4 @@
                 <br />
             {% endif %}
         {% endfor %}
-    </body>
-</html>
+    {% endblock content %}
