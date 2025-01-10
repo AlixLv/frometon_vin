@@ -5,12 +5,10 @@ def cheese_categories(request):
     # argument flat=True pour indiquer qu'on veut une liste simple de valeurs, pas de tuples
     # distinct() pour garantir des valeurs uniques
     types_of_milk = Cheese.objects.values_list('type_of_milk', flat=True).distinct()
-    print("🌸", types_of_milk)
     return {'cheese_categories': types_of_milk}
 
 
 def wine_categories(request):
     colors = Wine.objects.values_list('color', flat=True).distinct()
-    print("🌼", colors)
     return {'wine_categories': colors}
 

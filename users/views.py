@@ -59,6 +59,7 @@ def home(request):
     if request.method == "POST":
         form = SearchForm(request.POST)
         if form.is_valid():
+            # transmission valeur de l'input sous forme de string à search_product_view()
             product_object = form.cleaned_data['name']
             print("🍉", product_object)
             print(type(product_object))

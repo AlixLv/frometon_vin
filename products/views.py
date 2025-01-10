@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from products.models import Cheese, Wine 
-from django.http import HttpRequest, HttpResponse
+from django.forms.models import model_to_dict
 
 
 def get_cheeses(request):
@@ -34,5 +34,12 @@ def search_product_view(request):
     # on affiche home.html
     if request.session.has_key('user_search'):
         product_object = request.session['user_search']
-        print("🍇", product_object)
+        all_cheeses_names = Cheese.objects.values_list('name', flat=True).distinct()
+        print("🥨", all_cheeses_names)
+        print(type(all_cheeses_names))
+        for cheese_name in all_cheeses_names:
+            print("🥝", cheese_name)
+            if product_object == cheese_name:
+                print("🍇", cheese_name)
+                print(type(cheese_name))
     return(detail_product_view(request, id=5))
