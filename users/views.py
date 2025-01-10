@@ -2,8 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import LoginForm, RegisterForm, SearchForm
 from django.contrib import messages
 from django.contrib.auth import login as auth_login, authenticate, logout
-from products.models import Cheese
-
+from products.views import search_product_view
 
 
 def login_view(request):
@@ -60,7 +59,10 @@ def home(request):
     if request.method == "POST":
         form = SearchForm(request.POST)
         if form.is_valid():
-            product_object = form.save()
+            product_object = form.cleaned_data['name']
+            print("🍉", product_object)
+            print(type(product_object))
+            request.session['user_search'] = product_object
             return redirect(search_product_view)
     else:
         form = SearchForm()    
@@ -81,28 +83,7 @@ def goodbye(request):
     return render(request, './goodbye.html', context)
 
 
-def detail_product_view(request, id=None):
-    print("hey")
-    print("🌺", id)
-    product_object = None
-    if id is not None:
-        id_object = id
-        product_object = Cheese.objects.get(id=id)
-    context = {
-            "product_object" : product_object, 
-            "id" : id_object       
-    }
-    return render(request, "./product.html", context=context)
 
-
-def search_product_view(request):
-    # if request.method == 'POST':
-    # on choppe le texte de l'input, on fait la requête à la db pour trouver l'id correspondant
-    # on affiche template product.html
-    # else:
-    # on affiche home.html
-    print("coucou")
-    return(detail_product_view(request, id=5))
     
  
   
