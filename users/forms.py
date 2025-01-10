@@ -31,3 +31,5 @@ class SearchForm(ModelForm):
         model = Cheese 
         fields = ('name',)
         exclude = ['family', 'type_of_milk', 'region', 'description']
+        
+      

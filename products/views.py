@@ -14,7 +14,6 @@ def get_wines(request):
 
 
 def detail_product_view(request, id=None):
-    print("🌺", id)
     product_object = None
     if id is not None:
         id_object = id
@@ -27,19 +26,15 @@ def detail_product_view(request, id=None):
 
 
 def search_product_view(request):
-    # if request.method == 'POST':
-    # on choppe le texte de l'input, on fait la requête à la db pour trouver l'id correspondant
-    # on affiche template product.html
-    # else:
-    # on affiche home.html
-    if request.session.has_key('user_search'):
-        product_object = request.session['user_search']
-        all_cheeses_names = Cheese.objects.values_list('name', flat=True).distinct()
-        print("🥨", all_cheeses_names)
-        print(type(all_cheeses_names))
+    all_cheeses_names = Cheese.objects.values_list('name', flat=True).distinct()
+    
+    if request.session.has_key('query'):
+        query = request.session['query']
         for cheese_name in all_cheeses_names:
-            print("🥝", cheese_name)
-            if product_object == cheese_name:
-                print("🍇", cheese_name)
-                print(type(cheese_name))
-    return(detail_product_view(request, id=5))
+            if query == cheese_name:
+                print("🍍",cheese_name, type(cheese_name))
+                cheese_to_display = Cheese.objects.filter(name=cheese_name)
+                id_cheese = cheese_to_display.values_list('id', flat=True)
+                id_to_send = id_cheese[0]  
+  
+    return(detail_product_view(request, id=id_to_send))

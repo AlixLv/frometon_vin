@@ -55,22 +55,16 @@ def register_view(request):
 
 def home(request):
     username = request.user.username
-    
-    if request.method == "POST":
-        form = SearchForm(request.POST)
-        if form.is_valid():
-            # transmission valeur de l'input sous forme de string à search_product_view()
-            product_object = form.cleaned_data['name']
-            print("🍉", product_object)
-            print(type(product_object))
-            request.session['user_search'] = product_object
-            return redirect(search_product_view)
-    else:
-        form = SearchForm()    
-    
+    print("🍞", request.GET)
+    query_dict = request.GET
+    query = query_dict.get("q")
+    print("🥕", query)
+    if query is not None:
+        request.session['query'] = query
+        return redirect(search_product_view)
+      
     context = {
         "username": username,
-        "form": form
     }
     return render(request, './home.html', context)
 

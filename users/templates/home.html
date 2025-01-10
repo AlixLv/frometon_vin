@@ -13,10 +13,10 @@
             <a href="{% url 'login' %}">Login</a>
         </p>
     {% endif %}
-        <form method="post">
+        <form method="get">
             {% csrf_token %}
             <p>Rechercher un fromage</p>
-            {{ form.as_p }}
+            <input type="text" name="q" placeholder="search">
             <input type="submit" value="rechercher"/>
         </form>     
     
