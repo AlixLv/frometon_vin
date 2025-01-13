@@ -10,8 +10,16 @@
             <input type="text" name="q" placeholder="search">
             <input type="submit" value="rechercher"/>
         </form> 
-        <br/> 
-        <br/>
+        
+        {% if id_wine is not None %}  
+            <ul>
+                <li>{{ cheese.name }}</li>
+                <li>{{ wine.name }}</li>
+            </ul>  
+                <br/>
+        {% else %}
+            <br/>
+        {% endif %}     
         <p>
             <a href="{% url 'logout' %}">Log out</a>
         </p>
