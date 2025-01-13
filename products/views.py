@@ -31,15 +31,22 @@ def search_product_view(request):
         query = request.session['query']
         print("🌵 ", query)
 
-        # on récupère l'id de l'objet fromage cherché
-        id_cheese = Cheese.objects.filter(name__icontains=query).values('id')
-        print("🥥 ", id_cheese, type(id_cheese))
-        # id nettoyé, sorti du QuerySet
-        id_to_send = id_cheese[0]['id']
-        print("🥐 ", id_to_send, type(id_to_send)) 
-        return redirect('product', id=id_to_send)    
-
+        try:
+            # on récupère l'id de l'objet fromage cherché
+            id_cheese = Cheese.objects.filter(name__icontains=query).values('id')
+            print("🥥 ", id_cheese, type(id_cheese))
+            # id nettoyé, sorti du QuerySet
+            id_to_send = id_cheese[0]['id']
+            print("🥐 ", id_to_send, type(id_to_send)) 
+            return redirect('product', id=id_to_send) 
+    
+        except:
+            return redirect('not-found') 
+            
     else:
-        print("🍁 QUERY VIDE")
         return redirect('home')        
-  
+ 
+ 
+def data_not_found(request):
+    
+    return render(request, './not-found.html')

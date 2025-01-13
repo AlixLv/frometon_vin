@@ -6,4 +6,5 @@ urlpatterns = [
   path('all-wines/', views.get_wines, name="all-wines"),
   path('product/<int:id>/', views.detail_product_view, name="product"),
   path('send/data', views.search_product_view, name="send-data"), 
+  path('not-found', views.data_not_found, name="not-found"),
 ]

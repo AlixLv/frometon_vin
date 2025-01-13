@@ -3,7 +3,15 @@
 {% block content %}
     <h1>Frometon</h1>
     {% if user.is_authenticated %}
-        <h3>Bonjour, {{ user.username }}</h3>
+        <br/>
+        <form method="get">
+            {% csrf_token %}
+            <p>Rechercher un fromage</p>
+            <input type="text" name="q" placeholder="search">
+            <input type="submit" value="rechercher"/>
+        </form> 
+        <br/> 
+        <br/>
         <p>
             <a href="{% url 'logout' %}">Log out</a>
         </p>
@@ -12,12 +20,6 @@
         <p>
             <a href="{% url 'login' %}">Login</a>
         </p>
-    {% endif %}
-        <form method="get">
-            {% csrf_token %}
-            <p>Rechercher un fromage</p>
-            <input type="text" name="q" placeholder="search">
-            <input type="submit" value="rechercher"/>
-        </form>     
+    {% endif %}   
     
 {% endblock content %}
