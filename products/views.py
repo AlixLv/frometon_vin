@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from products.models import Cheese, Wine 
 from django.forms.models import model_to_dict
 
@@ -26,19 +26,20 @@ def detail_product_view(request, id=None):
 
 
 def search_product_view(request):
-    all_cheeses_names = Cheese.objects.values_list('name', flat=True).distinct()
-    
     # on vérifie qu'on reçoit bien la data:
-    if request.session.has_key('query'):
+    if len(request.session['query']) != 0:
         query = request.session['query']
-        # on itère sur tous les noms de fromages de la db
-        for cheese_name in all_cheeses_names:
-            if query == cheese_name:
-                # on récupère l'objet fromage cherché
-                cheese_to_display = Cheese.objects.filter(name=cheese_name)
-                # on récupère l'id
-                id_cheese = cheese_to_display.values_list('id', flat=True)
-                # id nettoyé, sorti du QuerySet
-                id_to_send = id_cheese[0]  
+        print("🌵 ", query)
+
+        # on récupère l'id de l'objet fromage cherché
+        id_cheese = Cheese.objects.filter(name__icontains=query).values('id')
+        print("🥥 ", id_cheese, type(id_cheese))
+        # id nettoyé, sorti du QuerySet
+        id_to_send = id_cheese[0]['id']
+        print("🥐 ", id_to_send, type(id_to_send)) 
+        return redirect('product', id=id_to_send)    
+
+    else:
+        print("🍁 QUERY VIDE")
+        return redirect('home')        
   
-    return(detail_product_view(request, id=id_to_send))
