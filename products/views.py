@@ -13,7 +13,7 @@ def get_wines(request):
     return render(request, './all-wines.html', {'wines': wines})
 
 
-def detail_product_view(request, id=None):
+def detail_cheese_product_view(request, id=None):
     product_object = None
     if id is not None:
         id_object = id
@@ -22,24 +22,40 @@ def detail_product_view(request, id=None):
             "product_object" : product_object, 
             "id" : id_object       
     }
-    return render(request, "./product.html", context=context)
+    return render(request, "./cheese-product.html", context=context)
+
+
+def detail_wine_product_view(request, id=None):
+    product_object = None
+    if id is not None:
+        id_object = id
+        product_object = Wine.objects.get(id=id)
+    context = {
+            "product_object" : product_object, 
+            "id" : id_object       
+    }
+    return render(request, "./wine-product.html", context=context)
 
 
 def search_product_view(request):
     # on vérifie qu'on reçoit bien la data:
     if len(request.session['query']) != 0:
         query = request.session['query']
-        print("🌵 ", query)
 
         try:
             # on récupère l'id de l'objet fromage cherché
             id_cheese = Cheese.objects.filter(name__icontains=query).values('id')
-            print("🥥 ", id_cheese, type(id_cheese))
-            # id nettoyé, sorti du QuerySet
-            id_to_send = id_cheese[0]['id']
-            print("🥐 ", id_to_send, type(id_to_send)) 
-            return redirect('product', id=id_to_send) 
-    
+            if len(id_cheese) == 0:
+                id_wine = Wine.objects.filter(name__icontains=query).values('id')
+                id_to_send = id_wine[0]['id']
+                return redirect('wine-product', id=id_to_send)
+            elif id_cheese is not None:    
+                # id nettoyé, sorti du QuerySet
+                id_to_send = id_cheese[0]['id']
+                return redirect('cheese-product', id=id_to_send)
+            else:
+                pass
+             
         except:
             return redirect('not-found') 
             
