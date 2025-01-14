@@ -56,43 +56,29 @@ def register_view(request):
 def home(request):
     # on récupère le texte de l'input
     query_dict = request.GET
-    print("🌈 ", query_dict)
     query = query_dict.get("q")
-    print("⭐️ ", query)
     
     # on vérifie qu'on reçoit bien la data:
     if query is not None:
         print("🌵 ", query)
 
         try:
-            # on récupère l'id de l'objet fromage cherché
-            id_cheese = Cheese.objects.filter(name__icontains=query).values('id')
-            print("🍎 ", id_cheese, type(id_cheese))
+            cheeses_to_display = Cheese.objects.filter(name__icontains=query)
+            print("🍏 ", cheeses_to_display, type(cheeses_to_display))
             
-            if len(id_cheese) == 0:
-                id_wine = Wine.objects.filter(name__icontains=query).values('id')
-                print("🌼 ", id_wine, type(id_wine))
-                id_to_send = id_wine[0]['id']
-                print("🌸 ", id_to_send, type(id_to_send))
-                wine_to_display = Wine.objects.get(id=id_to_send)
-                print("🌺 ", wine_to_display, type(wine_to_display))
+            if len(cheeses_to_display) == 0: 
+                wines_to_display = Wine.objects.filter(name__icontains=query)
+                print("🌺 ", wines_to_display, type(wines_to_display))
                 
                 context = {
-                    "id_wine": id_to_send,
-                    "wine": wine_to_display
+                    "wines": wines_to_display
                 }
                 return render(request, './home.html', context)
             
-            elif id_cheese is not None:   
-                # id nettoyé, sorti du QuerySet
-                id_to_send = id_cheese[0]['id']
-                print("🍐 ", id_to_send, type(id_to_send))
-                cheese_to_display = Cheese.objects.get(id=id_to_send)
-                print("🍏 ", cheese_to_display, type(cheese_to_display))
+            elif cheeses_to_display is not None:   
                 
                 context = {
-                    "id_cheese": id_to_send,
-                    "cheese": cheese_to_display
+                    "cheeses": cheeses_to_display
                 }
                 return render(request, './home.html', context)
             

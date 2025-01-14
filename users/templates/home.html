@@ -11,18 +11,22 @@
             <input type="submit" value="rechercher"/>
         </form> 
         
-        {% if id_wine is not None %}  
             <ul>
-                <li>{{ cheese.name }}</li>
-                <li>{{ wine.name }}</li>
+            {% for wine in wines %}   
+                    <li><a href="{% url 'wine-product' id=wine.id %}"> {{ wine.name }}, {{ wine.appellation }}, {{ wine.color }} </a></li>
+            {% endfor %} 
             </ul>  
-                <br/>
-        {% else %}
-            <br/>
-        {% endif %}     
+            <br/> 
+            <ul>
+            {% for cheese in cheeses %}   
+                    <li><a href="{% url 'cheese-product' id=cheese.id %}"> {{ cheese.name }}, {{ cheese.region }}, {{ cheese.type_of_milk }} </a></li>
+            {% endfor %} 
+            </ul>  
+        <br/>        
         <p>
             <a href="{% url 'logout' %}">Log out</a>
         </p>
+
     {% else %}
         <p>Vous n'êtes pas connecté.e</p>
         <p>
