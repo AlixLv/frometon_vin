@@ -12,6 +12,9 @@ class Cheese(models.Model):
     def __str__(self):
         return self.name
     
+    def get_by_natural_key(self, name):
+        return self.get(name = name)
+    
     class Meta:
         verbose_name = "cheese"
         verbose_name_plural = "cheeses"
@@ -31,14 +34,17 @@ class Wine(models.Model):
     def __str__(self):
         return f"{self.name}, {self.year}" 
     
+    def get_by_natural_key(self, name):
+        return self.get(name = name)
+    
     class Meta:
         verbose_name = "wine"
         verbose_name_plural = "wines"
 
 
 class Pairing(models.Model):
-    cheese_id = models.ManyToManyField(Cheese)        
-    wine_id = models.ManyToManyField(Wine)
+    cheese = models.ForeignKey(Cheese, on_delete=models.CASCADE, blank=True, null=True)        
+    wine = models.ForeignKey(Wine, on_delete=models.CASCADE, blank=True, null=True)
     created_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):

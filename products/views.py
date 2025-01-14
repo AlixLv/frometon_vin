@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
-from products.models import Cheese, Wine 
-from django.forms.models import model_to_dict
+from products.models import Cheese, Wine, Pairing 
 
 
 def get_cheeses(request):
@@ -35,33 +34,39 @@ def detail_wine_product_view(request, id=None):
             "product_object" : product_object, 
             "id" : id_object       
     }
-    return render(request, "./wine-product.html", context=context)
+    return render(request, "./wine-product.html", context=context)    
 
 
-# def search_product_view(request):
-#     # on vérifie qu'on reçoit bien la data:
-#     if len(request.session['query']) != 0:
-#         query = request.session['query']
+def get_list_pairings(request, id=None):
+    pairings_list = None
+    if id is not None:
+        id_product = id
+        print("🪼 ", id_product, type(id_product))
+        pairings_list = Pairing.objects.filter(cheese=id_product)
+        print("🐍 ", pairings_list)
+        pairings_id_list = pairings_list.values_list("id", flat=True)
+        print("🦄 ", pairings_id_list)
+        
+        context = {
+            "id_pairings": pairings_id_list
+        }
+    
+    return redirect(get_pairing, context)
 
-#         try:
-#             # on récupère l'id de l'objet fromage cherché
-#             id_cheese = Cheese.objects.filter(name__icontains=query).values('id')
-#             if len(id_cheese) == 0:
-#                 id_wine = Wine.objects.filter(name__icontains=query).values('id')
-#                 id_to_send = id_wine[0]['id']
-#                 return redirect('wine-product', id=id_to_send)
-#             elif id_cheese is not None:    
-#                 # id nettoyé, sorti du QuerySet
-#                 id_to_send = id_cheese[0]['id']
-#                 return redirect('cheese-product', id=id_to_send)
-#             else:
-#                 pass
-             
-#         except:
-#             return redirect('not-found') 
-            
-#     else:
-#         return redirect('home')        
+
+def get_pairing(request):
+    pairing_object = None
+    print("🦊 ", request)
+    
+    if id is not None:
+        id_pairing = id
+        pairing_object = Pairing.objects.filter(id=id)
+        print("🐙 ", pairing_object, type(pairing_object))
+    
+    context = {
+
+    }
+    return render(request, './pairing.html', context=context)
  
  
 def data_not_found(request):

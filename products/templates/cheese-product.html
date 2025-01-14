@@ -4,4 +4,6 @@
     <h2>{{ product_object.family }}</h2>
     <p>{{ product_object.region }}</p>
     <p>{{ product_object.description }}</p>
+    <br/>
+    <button type="button"><a href="{% url 'list-pairings' id=product_object.id %}">Trouver un accord</a></button>
 {% endblock content %}

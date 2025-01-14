@@ -1,0 +1,812 @@
+[
+    {
+        "model": "products.pairing",
+        "pk": 1,
+        "fields": {
+            "cheese": 1,
+            "wine": 42,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 2,
+        "fields": {
+            "cheese": 1,
+            "wine": 12,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 3,
+        "fields": {
+            "cheese": 1,
+            "wine": 17,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 4,
+        "fields": {
+            "cheese": 2,
+            "wine": 51,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 5,
+        "fields": {
+            "cheese": 2,
+            "wine": 1,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 6,
+        "fields": {
+            "cheese": 2,
+            "wine": 16,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 7,
+        "fields": {
+            "cheese": 3,
+            "wine": 50,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 8,
+        "fields": {
+            "cheese": 3,
+            "wine": 3,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 9,
+        "fields": {
+            "cheese": 3,
+            "wine": 20,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 10,
+        "fields": {
+            "cheese": 4,
+            "wine": 53,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 11,
+        "fields": {
+            "cheese": 4,
+            "wine": 6,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 12,
+        "fields": {
+            "cheese": 4,
+            "wine": 21,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 13,
+        "fields": {
+            "cheese": 5,
+            "wine": 54,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 14,
+        "fields": {
+            "cheese": 5,
+            "wine": 11,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 15,
+        "fields": {
+            "cheese": 5,
+            "wine": 22,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 16,
+        "fields": {
+            "cheese": 6,
+            "wine": 49,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 17,
+        "fields": {
+            "cheese": 6,
+            "wine": 5,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 18,
+        "fields": {
+            "cheese": 6,
+            "wine": 23,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 19,
+        "fields": {
+            "cheese": 7,
+            "wine": 47,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 20,
+        "fields": {
+            "cheese": 7,
+            "wine": 7,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 21,
+        "fields": {
+            "cheese": 7,
+            "wine": 24,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 22,
+        "fields": {
+            "cheese": 8,
+            "wine": 52,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 23,
+        "fields": {
+            "cheese": 8,
+            "wine": 4,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 24,
+        "fields": {
+            "cheese": 8,
+            "wine": 25,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 25,
+        "fields": {
+            "cheese": 9,
+            "wine": 45,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 26,
+        "fields": {
+            "cheese": 9,
+            "wine": 2,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 27,
+        "fields": {
+            "cheese": 9,
+            "wine": 26,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 28,
+        "fields": {
+            "cheese": 10,
+            "wine": 55,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 29,
+        "fields": {
+            "cheese": 10,
+            "wine": 13,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 30,
+        "fields": {
+            "cheese": 10,
+            "wine": 18,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 31,
+        "fields": {
+            "cheese": 11,
+            "wine": 56,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 32,
+        "fields": {
+            "cheese": 11,
+            "wine": 9,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 33,
+        "fields": {
+            "cheese": 11,
+            "wine": 19,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 34,
+        "fields": {
+            "cheese": 12,
+            "wine": 46,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 35,
+        "fields": {
+            "cheese": 12,
+            "wine": 10,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 36,
+        "fields": {
+            "cheese": 12,
+            "wine": 27,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 37,
+        "fields": {
+            "cheese": 13,
+            "wine": 43,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 38,
+        "fields": {
+            "cheese": 13,
+            "wine": 14,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 39,
+        "fields": {
+            "cheese": 13,
+            "wine": 28,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 40,
+        "fields": {
+            "cheese": 14,
+            "wine": 48,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 41,
+        "fields": {
+            "cheese": 14,
+            "wine": 15,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 42,
+        "fields": {
+            "cheese": 14,
+            "wine": 29,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 43,
+        "fields": {
+            "cheese": 15,
+            "wine": 44,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 44,
+        "fields": {
+            "cheese": 15,
+            "wine": 8,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 45,
+        "fields": {
+            "cheese": 15,
+            "wine": 30,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 46,
+        "fields": {
+            "cheese": 16,
+            "wine": 48,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 47,
+        "fields": {
+            "cheese": 16,
+            "wine": 5,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 48,
+        "fields": {
+            "cheese": 16,
+            "wine": 31,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 49,
+        "fields": {
+            "cheese": 17,
+            "wine": 42,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 50,
+        "fields": {
+            "cheese": 17,
+            "wine": 1,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 51,
+        "fields": {
+            "cheese": 17,
+            "wine": 32,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 52,
+        "fields": {
+            "cheese": 18,
+            "wine": 43,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 53,
+        "fields": {
+            "cheese": 18,
+            "wine": 9,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 54,
+        "fields": {
+            "cheese": 18,
+            "wine": 33,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 55,
+        "fields": {
+            "cheese": 19,
+            "wine": 45,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 56,
+        "fields": {
+            "cheese": 19,
+            "wine": 2,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 57,
+        "fields": {
+            "cheese": 19,
+            "wine": 34,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 58,
+        "fields": {
+            "cheese": 20,
+            "wine": 53,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 59,
+        "fields": {
+            "cheese": 20,
+            "wine": 6,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 60,
+        "fields": {
+            "cheese": 20,
+            "wine": 35,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 61,
+        "fields": {
+            "cheese": 21,
+            "wine": 54,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 62,
+        "fields": {
+            "cheese": 21,
+            "wine": 11,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 63,
+        "fields": {
+            "cheese": 21,
+            "wine": 36,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 64,
+        "fields": {
+            "cheese": 22,
+            "wine": 49,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 65,
+        "fields": {
+            "cheese": 22,
+            "wine": 5,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 66,
+        "fields": {
+            "cheese": 22,
+            "wine": 37,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 67,
+        "fields": {
+            "cheese": 23,
+            "wine": 47,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 68,
+        "fields": {
+            "cheese": 23,
+            "wine": 7,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 69,
+        "fields": {
+            "cheese": 23,
+            "wine": 38,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 70,
+        "fields": {
+            "cheese": 24,
+            "wine": 52,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 71,
+        "fields": {
+            "cheese": 24,
+            "wine": 4,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 72,
+        "fields": {
+            "cheese": 24,
+            "wine": 39,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 73,
+        "fields": {
+            "cheese": 25,
+            "wine": 45,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 74,
+        "fields": {
+            "cheese": 25,
+            "wine": 3,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 75,
+        "fields": {
+            "cheese": 25,
+            "wine": 40,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 76,
+        "fields": {
+            "cheese": 26,
+            "wine": 55,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 77,
+        "fields": {
+            "cheese": 26,
+            "wine": 13,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 78,
+        "fields": {
+            "cheese": 26,
+            "wine": 41,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 79,
+        "fields": {
+            "cheese": 27,
+            "wine": 56,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 80,
+        "fields": {
+            "cheese": 27,
+            "wine": 9,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 81,
+        "fields": {
+            "cheese": 27,
+            "wine": 29,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 82,
+        "fields": {
+            "cheese": 28,
+            "wine": 46,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 83,
+        "fields": {
+            "cheese": 28,
+            "wine": 10,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 84,
+        "fields": {
+            "cheese": 28,
+            "wine": 30,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 85,
+        "fields": {
+            "cheese": 29,
+            "wine": 43,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 86,
+        "fields": {
+            "cheese": 29,
+            "wine": 14,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 87,
+        "fields": {
+            "cheese": 29,
+            "wine": 31,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 88,
+        "fields": {
+            "cheese": 30,
+            "wine": 48,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 89,
+        "fields": {
+            "cheese": 30,
+            "wine": 15,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.pairing",
+        "pk": 90,
+        "fields": {
+            "cheese": 30,
+            "wine": 32,
+            "created_at": "2025-01-14T12:00:00Z"
+        }
+    }
+]
