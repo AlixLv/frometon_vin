@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_list_or_404, get_object_or_404
 from .forms import LoginForm, RegisterForm, SearchForm
 from django.contrib import messages
 from django.contrib.auth import login as auth_login, authenticate, logout
 from products.models import Cheese, Wine
+from django.http import Http404
 
 
 def login_view(request):
@@ -62,36 +63,30 @@ def home(request):
     if query is not None:
 
         try:
-            cheeses_to_display = Cheese.objects.filter(name__icontains=query)
-            
-            if len(cheeses_to_display) == 0: 
-                wines_to_display = Wine.objects.filter(name__icontains=query)
-                
-                context = {
-                    "wines": wines_to_display
-                }
-                return render(request, './home.html', context)
-            
-            elif cheeses_to_display is not None:   
-                
-                context = {
-                    "cheeses": cheeses_to_display
-                }
-                return render(request, './home.html', context)
-            
-            else:
-                pass
+            cheeses_to_display = get_list_or_404(Cheese.objects.filter(name__icontains=query)) 
+            print("🐶 ", cheeses_to_display)
              
-        except:
-            return redirect('not-found') 
+            context = {
+                "cheeses": cheeses_to_display
+            }
+            return render(request, './home.html', context)
+        
+        except Http404:
+                try:
+                    wines_to_display = get_list_or_404(Wine.objects.filter(name__icontains=query))
+                    print("🐱", wines_to_display)
+                
+                    context = {
+                        "wines": wines_to_display
+                    }
+                    return render(request, './home.html', context)
+                except:
+                    return redirect('not-found')
             
     else:
-        pass  
+        return render(request, './home.html') 
       
-    context = {
-    }
-    return render(request, './home.html', context)
-
+      
 
 def goodbye(request):
     username = request.user.username
