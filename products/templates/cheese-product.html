@@ -7,7 +7,7 @@
     <br/>
     <!-- envoi de l'id du product via un formulaire -->
     <form action="{% url 'pairing' %}" method="get">
-        <input type="hidden" name="product_id" value="{{ product_object.id }}">
+        <input type="hidden" name="product_name" value="{{ product_object.name }}">
         <button type="submit">Trouver un accord</button>
     </form>
 

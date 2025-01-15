@@ -45,12 +45,12 @@ def detail_wine_product_view(request, id=None):
 def get_pairing(request):
     objects_pairing_list = []
     
+    
     try:
-        # Récupère la valeur du paramètre 'product_id' de l'URL
-        id_product = int(request.GET.get('product_id'))
-        print("🪼 ", id_product, type(id_product))
-        searched_product = get_object_or_404(Cheese, id = id_product)
-        print("🐳 ", searched_product, type(searched_product))
+        # Récupère la valeur du paramètre 'product_name' du QueryDict envoyé via form
+        name_product = request.GET.get('product_name')
+        searched_product = get_object_or_404(Cheese, name = name_product)
+        id_product = searched_product.id
         
         if id_product:
             pairings_list = Pairing.objects.filter(cheese=id_product)
