@@ -5,5 +5,10 @@
     <p>{{ product_object.region }}</p>
     <p>{{ product_object.description }}</p>
     <br/>
-    <button type="button"><a href="{% url 'list-pairings' id=product_object.id %}">Trouver un accord</a></button>
+    <!-- envoi de l'id du product via un formulaire -->
+    <form action="{% url 'pairing' %}" method="get">
+        <input type="hidden" name="product_id" value="{{ product_object.id }}">
+        <button type="submit">Trouver un accord</button>
+    </form>
+
 {% endblock content %}

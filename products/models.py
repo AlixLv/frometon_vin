@@ -48,7 +48,7 @@ class Pairing(models.Model):
     created_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
-        return f"Pairing: {self.cheese_id} - {self.wine_id}"
+        return f"Pairing: cheese: {self.cheese_id} - wine: {self.wine_id}"
     
     class Meta:
         verbose_name = "pairing"

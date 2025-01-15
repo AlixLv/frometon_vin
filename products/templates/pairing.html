@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>Pairing</h1>
-
+    <!-- besoin de la liste d'objects vins
+    besoin de l'objet fromage -->
+    <p>{{ searched_product.name }}</p>
+    {% for object in objects_pairing_list %}
+    <p>{{ object.name }}</p>
+    {% endfor %}
 {% endblock content %}
