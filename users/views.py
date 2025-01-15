@@ -60,15 +60,12 @@ def home(request):
     
     # on vérifie qu'on reçoit bien la data:
     if query is not None:
-        print("🌵 ", query)
 
         try:
             cheeses_to_display = Cheese.objects.filter(name__icontains=query)
-            print("🍏 ", cheeses_to_display, type(cheeses_to_display))
             
             if len(cheeses_to_display) == 0: 
                 wines_to_display = Wine.objects.filter(name__icontains=query)
-                print("🌺 ", wines_to_display, type(wines_to_display))
                 
                 context = {
                     "wines": wines_to_display
