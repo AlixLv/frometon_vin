@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_list_or_404, get_object_or_40
 from .forms import LoginForm, RegisterForm, UpdateUserForm
 from django.contrib import messages
 from django.contrib.auth import login as auth_login, authenticate, logout
+from django.contrib.auth.forms import PasswordChangeForm
 from products.models import Cheese, Wine
 from django.http import Http404
 
@@ -143,6 +144,29 @@ def update_profile(request, id=None):
     else:
         print("⛔️ NOT ALLOWED")
         return render(request, './register.html') 
-  
- 
-  
+
+
+def update_password(request, id=None):
+    message = None
+    if request.user.is_authenticated and id == request.user.id:
+        if request.method == "POST":
+            form = PasswordChangeForm(user = request.user, data=request.POST)
+            
+            if form.is_valid():
+                user = form.save()
+                print("⭐️ ", user)
+                message = "Modification enregistrée"
+                print("🌈 ", message)
+
+                context = {
+                    "message": message
+                }            
+                return render(request, './login.html', context)
+            
+        else:
+            form = PasswordChangeForm(user = request.user)
+            return render(request, './edit-password.html', {"form": form})    
+        
+    else:
+        print("⛔️ NOT ALLOWED")
+        return render(request, './register.html') 

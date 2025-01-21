@@ -4,6 +4,6 @@
 <h4>{{ username }}</h4>
 <p>{{ email }}</p>
 <br/>
-<button onclick="location.href='//127.0.0.1:8000/users/edit-profile/'">Modifier mon profil</button>
- 
+<a href="{% url 'edit-profile' id=id %}"><button>Modifier mon profil</button></a> 
+<a href="{% url 'edit-password' id=id %}"><button>Modifier mon mot de passe</button></a> 
 {% endblock content %}
