@@ -3,6 +3,7 @@ from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
 from products.models import Cheese
+from users.models import CustomUser
 
 
 class LoginForm(forms.Form):
@@ -26,10 +27,14 @@ class RegisterForm(UserCreationForm):
         fields = ('username', 'email', 'password1', 'password2')
 
 
-class SearchForm(ModelForm):    
+class UpdateUserForm(forms.ModelForm):
+    username = forms.CharField(max_length=65)
+    email = forms.EmailField(max_length=70, widget=forms.EmailInput)
+    
     class Meta:
-        model = Cheese 
-        fields = ('name',)
-        exclude = ['family', 'type_of_milk', 'region', 'description']
+        model = CustomUser
+        fields = ['username', 'email']
+    
+
         
       

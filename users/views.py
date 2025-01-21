@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_list_or_404, get_object_or_404
-from .forms import LoginForm, RegisterForm, SearchForm
+from .forms import LoginForm, RegisterForm, UpdateUserForm
 from django.contrib import messages
 from django.contrib.auth import login as auth_login, authenticate, logout
 from products.models import Cheese, Wine
@@ -12,10 +12,15 @@ def login_view(request):
         form = LoginForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data['username']
+            print("🦋 ", username)
             email = form.cleaned_data['email']
+            print("🦋 ", email)
             password = form.cleaned_data['password']
+            print("🦋 ", password)
             #fonction authenticate() vérifie les données postées, si les données sont valides, une instance de la classe User est retournée
             user = authenticate(request, username=username, email=email, password=password)
+            print("🦄 ", request.user, request.user.username)
+            print("👑 ", user)
             if user is not None:
                 #fonction login() créée un id de session dans le server et le renvoie au navigateur sous la forme d'un cookie
                 auth_login(request, user)
@@ -117,11 +122,27 @@ def get_profile(request, id=None):
 
 
 
-def update_profile(request):
-    context = {
-        
-    }   
+def update_profile(request, id=None):
+    if request.user.is_authenticated and id == request.user.id:
+        if request.method == "POST":
+            form = UpdateUserForm(request.POST, instance=request.user)
+            print("✅ ", form)
+            if form.is_valid():
+                user = form.save()
+                
+                context = {
+                    "username": user.username,
+                    "email": user.email,
+                    "id": user.id
+                }
+                return render(request, './profile.html', context)
+        else:
+            form = UpdateUserForm()      
+        return render(request, './edit-profile.html', {"form": form})
     
-    render(request, './profile.html', context) 
+    else:
+        print("⛔️ NOT ALLOWED")
+        return render(request, './register.html') 
+  
  
   
