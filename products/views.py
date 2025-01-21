@@ -66,6 +66,7 @@ def get_pairing(request):
             try:
                 searched_product = get_object_or_404(Wine, name=name_product)
                 print("🐢 ", searched_product, type(searched_product))  
+                print("🔥 HTP404", name_product)
                 id_product = searched_product.id
                 print("🦞", id_product, type(id_product))
                 

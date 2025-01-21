@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Mon profil</h1>
+<h4>{{ username }}</h4>
+<p>{{ email }}</p>
+<br/>
+<button onclick="location.href='//127.0.0.1:8000/users/edit-profile/'">Modifier mon profil</button>
+ 
+{% endblock content %}

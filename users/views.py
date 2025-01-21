@@ -98,6 +98,30 @@ def goodbye(request):
 
 
 
+def get_profile(request, id=None):
+    username = None
+    if request.user.is_authenticated and id == request.user.id:
+        print("👀 ", request.user.username, request.user.email, request.user.id)
+        username = request.user.username
+        email = request.user.email  
+        id = request.user.id
+        context = {
+            "username": username,
+            "email": email,
+            "id": id
+        }
+        return render(request, './profile.html', context)
+    else:
+        print("⛔️ NOT ALLOWED")
+        return render(request, './register.html')  
+
+
+
+def update_profile(request):
+    context = {
+        
+    }   
     
+    render(request, './profile.html', context) 
  
   
