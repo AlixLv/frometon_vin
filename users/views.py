@@ -149,11 +149,15 @@ def update_profile(request, id=None):
 
 def update_password(request, id=None):
     if request.method == "POST":
+        message = None
         form = PasswordChangeForm(user = request.user, data=request.POST)
             
         if form.is_valid():
             user = form.save()
-            print("⭐️ ", user)         
+            print("⭐️ ", user) 
+            # type de messages stockés temporairement dans la session
+            messages.success(request, "Votre mot de passe a été modifié avec succès. Veuillez vous reconnecter.")
+                   
             return redirect(reverse('login'))
             
         else:
