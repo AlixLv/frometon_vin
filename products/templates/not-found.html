@@ -2,5 +2,5 @@
 {% block content %}
     <h3>Le produit recherché n'existe pas dans notre base de données !</h3>
     <br/>
-        <button onclick="location.href='//127.0.0.1:8000/users/home/'">Démarrer une nouvelle recherche</button>
+       <a href="{% url 'home' %}"><button>Démarrer une nouvelle recherche</button></a>
 {% endblock content %}

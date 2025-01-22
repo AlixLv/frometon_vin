@@ -13,7 +13,7 @@
         {{ form.as_p }}
         <input type="submit" value="Se connecter"/>
     </form>
-    <a href="http://127.0.0.1:8000/users/register">
+    <a href="{% url 'register' %}">
         <input type="submit" value="S'inscrire" />
     </a>
 {% endblock content %}

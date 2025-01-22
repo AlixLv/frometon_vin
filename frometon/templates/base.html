@@ -11,11 +11,13 @@
         <nav class="menu">
             <a href="{% url 'home' %}">Home</a>
                 <a href="{% url 'profile' id=request.user.id %}">Profil</a>
+                <a href="{% url 'all-cheeses' %}">Fromages</a>
                 <div>
                     {% for category in cheese_categories %}
                     <a href="#">{{ category }}</a>
                     {% endfor %}
                 </div>
+                <a href="{% url 'all-wines' %}">Vins</a>
                 <div>
                     {% for category in wine_categories %}
                     <a href="#">{{ category }}</a>
