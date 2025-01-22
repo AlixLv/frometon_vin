@@ -23,14 +23,11 @@
             {% endfor %} 
             </ul>  
         <br/>        
-        <p>
-            <a href="{% url 'logout' %}">Log out</a>
-        </p>
 
     {% else %}
         <p>Vous n'êtes pas connecté.e</p>
         <p>
-            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'login' %}">Se connecter</a>
         </p>
     {% endif %}   
     

@@ -22,10 +22,11 @@ def login_view(request):
             #fonction authenticate() vérifie les données postées, si les données sont valides, une instance de la classe User est retournée
             user = authenticate(request, username=username, email=email, password=password)
             print("🦄 ", request.user, request.user.username)
-            print("👑 ", user)
             if user is not None:
                 #fonction login() créée un id de session dans le server et le renvoie au navigateur sous la forme d'un cookie
                 auth_login(request, user)
+                print("🌈 ", request.user)
+                print("👑 ", user)
                 return redirect('home')
             else:
              #si le formulaire n'est pas valide ou que le user n'est pas authentifié    
@@ -62,6 +63,7 @@ def register_view(request):
 
 
 def home(request):
+    print("🔥 ", request.user.id)
     # on récupère le texte de l'input
     query_dict = request.GET
     query = query_dict.get("q")

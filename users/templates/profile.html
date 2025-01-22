@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Mon profil</h1>
+<h2>Mon profil</h2>
 <h4>{{ username }}</h4>
 <p>{{ email }}</p>
 <br/>
 <a href="{% url 'edit-profile' id=id %}"><button>Modifier mon profil</button></a> 
 <a href="{% url 'edit-password' id=id %}"><button>Modifier mon mot de passe</button></a> 
+<a href="{% url 'logout' %}"><button>Se déconnecter</button></a>
+
 {% endblock content %}

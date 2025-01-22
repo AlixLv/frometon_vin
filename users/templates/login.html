@@ -1,4 +1,3 @@
-{% extends 'base.html' %}
 {% block content %}
     <!-- novalidate permet d'empêcher la validation automatique du navigateur et forcer celle de Django  -->
     <form method="post" novalidate>
@@ -14,7 +13,7 @@
         {{ form.as_p }}
         <input type="submit" value="Se connecter"/>
     </form>
-    <a href="http://127.0.0.1:8000/register">
+    <a href="http://127.0.0.1:8000/users/register">
         <input type="submit" value="S'inscrire" />
     </a>
 {% endblock content %}
