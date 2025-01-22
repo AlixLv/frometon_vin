@@ -5,6 +5,7 @@ from django.contrib.auth import login as auth_login, authenticate, logout
 from django.contrib.auth.forms import PasswordChangeForm
 from products.models import Cheese, Wine
 from django.http import Http404
+from django.urls import reverse
 
 
 def login_view(request):
@@ -147,26 +148,18 @@ def update_profile(request, id=None):
 
 
 def update_password(request, id=None):
-    message = None
-    if request.user.is_authenticated and id == request.user.id:
-        if request.method == "POST":
-            form = PasswordChangeForm(user = request.user, data=request.POST)
+    if request.method == "POST":
+        form = PasswordChangeForm(user = request.user, data=request.POST)
             
-            if form.is_valid():
-                user = form.save()
-                print("⭐️ ", user)
-                message = "Modification enregistrée"
-                print("🌈 ", message)
-
-                context = {
-                    "message": message
-                }            
-                return render(request, './login.html', context)
+        if form.is_valid():
+            user = form.save()
+            print("⭐️ ", user)         
+            return redirect(reverse('login'))
             
         else:
-            form = PasswordChangeForm(user = request.user)
-            return render(request, './edit-password.html', {"form": form})    
-        
+            messages.error(request, f'Veuillez entrer un nouveau mot de passe') 
+            
     else:
-        print("⛔️ NOT ALLOWED")
-        return render(request, './register.html') 
+        form = PasswordChangeForm(user = request.user)
+    return render(request, './edit-password.html', {"form": form})    
+         
