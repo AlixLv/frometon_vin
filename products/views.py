@@ -1,19 +1,27 @@
 from django.shortcuts import render, redirect, get_object_or_404, get_list_or_404
 from products.models import Cheese, Wine, Pairing 
 from django.http import Http404
+from django.views.generic import TemplateView
 
 
 
-def get_cheeses(request):
-    cheeses = Cheese.objects.all()
-    return render(request, './all-cheeses.html', {'cheeses': cheeses})
+# def get_cheeses(request):
+#     cheeses = Cheese.objects.all()
+#     return render(request, './all-cheeses.html', {'cheeses': cheeses})
 
 
 
-def get_wines(request):
-    wines = Wine.objects.all()
-    return render(request, './all-wines.html', {'wines': wines})
+# def get_wines(request):
+#     wines = Wine.objects.all()
+#     return render(request, './all-wines.html', {'wines': wines})
 
+
+class CheesesView(TemplateView):
+    template_name = "all-cheeses.html"
+    
+ 
+class WinesView(TemplateView):
+    template_name = "all-wines.html"    
 
 
 def detail_cheese_product_view(request, id=None):

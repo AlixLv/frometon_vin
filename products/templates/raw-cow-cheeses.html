@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+    {% block content %}
+        <h2 class="font-semibold text-xl">Fromage au lait de vache cru</h2>
+        {% for milk in cheese_categories %}
+            {% if milk == "Vache cru" %}
+                <p>{{ milk }}</p>
+            {% endif %}
+        {% endfor %}    
+    {% endblock content %}

@@ -79,6 +79,8 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'frometon.context_processors.cheese_categories',
                 'frometon.context_processors.wine_categories',
+                'frometon.context_processors.get_cheeses',
+                'frometon.context_processors.get_wines',
             ],
         },
     },
