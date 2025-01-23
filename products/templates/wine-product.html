@@ -1,16 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>{{ product_object.name }}</h1>
-    <h2>{{ product_object.appellation }}</h2>
-    <p>{{ product_object.vineyard }}</p>
-    <p>{{ product_object.year }}</p>
-    <p>{{ product_object.color }}</p>
-    <p>{{ product_object.grape_variety }}</p>
-    <p>{{ product_object.description }}</p>
+    <h1 class="font-semibold text-lg">{{ product_object.name }}</h1>
+    <br/>
+    <h2>Appellation : {{ product_object.appellation }}</h2>
+    <p>Domaine : {{ product_object.vineyard }}</p>
+    <p>Année de production : {{ product_object.year }}</p>
+    <p>Couleur : {{ product_object.color }}</p>
+    <p>Cépages : {{ product_object.grape_variety }}</p>
+    <p>Description : {{ product_object.description }}</p>
     <br/>
     <!-- envoi de l'id du product via un formulaire -->
     <form action="{% url 'pairing' %}" method="get">
         <input type="hidden" name="product_name" value="{{ product_object.name }}">
-        <button type="submit">Trouver un accord</button>
+        <button type="submit" class="border-2 border-orange-400 rounded-lg p-1">Trouver un accord</button>
     </form>
 {% endblock content %}

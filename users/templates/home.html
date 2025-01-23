@@ -1,25 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Home</h1>
     {% if user.is_authenticated %}
-        <br/>
+    <div class="h-[32rem] flex items-center justify-center">
         <form method="get">
             {% csrf_token %}
             <p>Rechercher un fromage</p>
             <input type="text" name="q" placeholder="search">
-            <input type="submit" value="rechercher"/>
+            <input type="submit" value="rechercher" class="border-2 border-orange-400 rounded-lg p-1"/>
         </form> 
-        
+    </div>    
             <ul>
             {% for wine in wines %}   
-                    <li><a href="{% url 'wine-product' id=wine.id %}"> {{ wine.name }}, {{ wine.appellation }}, {{ wine.color }} </a></li>
+                    <li><a href="{% url 'wine-product' id=wine.id %}" class="hover:underline"> {{ wine.name }}, {{ wine.appellation }}, {{ wine.color }} </a></li>
             {% endfor %} 
             </ul>  
             <br/> 
             <ul>
             {% for cheese in cheeses %}   
-                    <li><a href="{% url 'cheese-product' id=cheese.id %}"> {{ cheese.name }}, {{ cheese.region }}, {{ cheese.type_of_milk }} </a></li>
+                    <li><a href="{% url 'cheese-product' id=cheese.id %}"class="hover:underline">  {{ cheese.name }}, {{ cheese.region }}, {{ cheese.type_of_milk }} </a></li>
             {% endfor %} 
             </ul>  
         <br/>        

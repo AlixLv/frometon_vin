@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2>Mon profil</h2>
+<h2 class="text-lg font-semibold">Mon profil</h2>
+<br/>
 <h4>{{ username }}</h4>
 <p>{{ email }}</p>
 <br/>
-<a href="{% url 'edit-profile' id=id %}"><button>Modifier mon profil</button></a> 
-<a href="{% url 'edit-password' id=id %}"><button>Modifier mon mot de passe</button></a> 
-<a href="{% url 'logout' %}"><button>Se déconnecter</button></a>
+<div class=" w-full">
+    <a href="{% url 'edit-profile' id=id %}"><button class="border-2 border-orange-400 rounded-lg p-1 w-1/5">Modifier mon profil</button></a> 
+    <a href="{% url 'edit-password' id=id %}"><button class="border-2 border-orange-400 rounded-lg p-1 w-1/5">Modifier mon mot de passe</button></a> 
+</div>
+<br/>
+<a href="{% url 'logout' %}"><button class="border-2 border-orange-400 rounded-lg p-1">Se déconnecter</button></a>
 
 {% endblock content %}

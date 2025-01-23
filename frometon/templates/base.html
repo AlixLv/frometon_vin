@@ -1,31 +1,37 @@
 <!-- indication à VSCode qu'il s'agit bien d'un fichier Django HTML -->
 {# django #}
+{% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {% block head %}<title>Frometon</title>{% endblock %}
+        {% tailwind_css %}
     </head>
-    <body>
-        <nav class="menu">
-            <a href="{% url 'home' %}">Home</a>
-                <a href="{% url 'profile' id=request.user.id %}">Profil</a>
-                <a href="{% url 'all-cheeses' %}">Fromages</a>
-                <div>
+    <body class="font-serif bg-white">
+        <nav class="flex flex-row justify-evenly mb-5 text-stone-950 text-lg text-center font-medium">
+            <a href="{% url 'home' %}" class="hover:underline">Home</a>
+                <a href="{% url 'profile' id=request.user.id %}" class="hover:underline">Profil</a>
+                <select onchange="location = this.value;">
+                    <option>Fromages</option>
+                    <option value="{% url 'all-cheeses' %}">Tous les fromages</option>
                     {% for category in cheese_categories %}
-                    <a href="#">{{ category }}</a>
+                    <option><a href="#">{{ category }}</a></option>
                     {% endfor %}
-                </div>
-                <a href="{% url 'all-wines' %}">Vins</a>
-                <div>
+                </select>
+                <select onchange="location = this.value;">
+                    <option>Vins</option> 
+                    <option value="{% url 'all-wines' %}">Tous les vins</option>
                     {% for category in wine_categories %}
-                    <a href="#">{{ category }}</a>
+                    <a href="#"><option>{{ category }}</option></a>
                     {% endfor %}
-                </div>   
+                </select>          
           </nav>
+          <br/>
         {% block body %}
-            {% block content %}{% endblock %}
+            {% block content %}
+            {% endblock %}
         {% endblock %}
     </body>
 </html>

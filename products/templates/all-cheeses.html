@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
 
     {% block content %}
-        <h1>Tous les fromages</h1>
         {% for cheese in cheeses %}
-            <h3>{{ cheese.name }}</h3>
+            <h3 class="font-semibold">{{ cheese.name }}</h3>
             <p>{{ cheese.family }}</p>
             <p>{{ cheese.type_of_milk }}</p>
             <p>{{ cheese.region }}</p>
