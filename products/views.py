@@ -5,24 +5,40 @@ from django.views.generic import TemplateView
 
 
 
-# def get_cheeses(request):
-#     cheeses = Cheese.objects.all()
-#     return render(request, './all-cheeses.html', {'cheeses': cheeses})
-
-
-
-# def get_wines(request):
-#     wines = Wine.objects.all()
-#     return render(request, './all-wines.html', {'wines': wines})
-
-
 class CheesesView(TemplateView):
     template_name = "all-cheeses.html"
     
  
 class WinesView(TemplateView):
-    template_name = "all-wines.html"    
+    template_name = "all-wines.html"  
+    
 
+class RawCowCheeses(TemplateView):
+    template_name = "raw-cow-cheeses.html"
+
+
+class PasteurisedCowCheeses(TemplateView):
+    template_name = "pasteurised-cow-cheeses.html" 
+
+
+class RawSheepCheeses(TemplateView):
+    template_name = "raw-sheep-cheeses.html"             
+
+
+class RawGoatCheeses(TemplateView):
+    template_name = "raw-goat-cheeses.html"
+
+
+class RedWines(TemplateView):
+        template_name = "red-wines.html"    
+
+
+class WhiteWines(TemplateView):
+    template_name = "white-wines.html"
+
+
+class RoseWines(TemplateView):
+    template_name = "rose-wines.html"    
 
 def detail_cheese_product_view(request, id=None):
     product_object = None

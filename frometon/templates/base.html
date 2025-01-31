@@ -16,16 +16,17 @@
                 <select onchange="location = this.value;">
                     <option>Fromages</option>
                     <option value="{% url 'all-cheeses' %}">Tous les fromages</option>
-                    {% for category in cheese_categories %}
-                    <option><a href="#">{{ category }}</a></option>
-                    {% endfor %}
+                    <option value="{% url 'raw-cow-cheeses' %}">Lait de vache cru</option>
+                    <option value="{% url 'pasteurised-cow-cheeses' %}">Lait de vache pasteurisé</option>
+                    <option value="{% url 'raw-goat-cheeses' %}">Lait de chèvre cru</option>
+                    <option value="{% url 'raw-sheep-cheeses' %}">Lait de brebis cru</option>
                 </select>
                 <select onchange="location = this.value;">
                     <option>Vins</option> 
                     <option value="{% url 'all-wines' %}">Tous les vins</option>
-                    {% for category in wine_categories %}
-                    <a href="#"><option>{{ category }}</option></a>
-                    {% endfor %}
+                    <option value="{% url 'white-wines' %}">Vins blancs</option>
+                    <option value="{% url 'red-wines' %}">Vins rouges</option>
+                    <option value="{% url 'rose-wines' %}">Vins rosés</option>
                 </select>          
           </nav>
           <br/>
