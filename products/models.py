@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Cheese(models.Model):
     name = models.CharField(max_length=200)
     family = models.CharField(max_length=200)
@@ -53,3 +54,6 @@ class Pairing(models.Model):
     class Meta:
         verbose_name = "pairing"
         verbose_name_plural = "pairings"
+
+
+ 
