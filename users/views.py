@@ -73,10 +73,11 @@ def home(request):
 
         try:
             cheeses_to_display = get_list_or_404(Cheese.objects.filter(name__icontains=query)) 
-            print("🐶 ", cheeses_to_display)
+            print("🐶 ", cheeses_to_display, type(cheeses_to_display))
              
             context = {
-                "cheeses": cheeses_to_display
+                "cheeses": cheeses_to_display,
+                "wines": None
             }
             return render(request, './home.html', context)
         
@@ -86,14 +87,19 @@ def home(request):
                     print("🐱", wines_to_display)
                 
                     context = {
-                        "wines": wines_to_display
+                        "wines": wines_to_display,
+                        "cheeses": None
                     }
                     return render(request, './home.html', context)
                 except:
                     return redirect('not-found')
             
     else:
-        return render(request, './home.html') 
+        context = {
+            "cheeses": None,
+            "wines": None
+        }
+        return render(request, './home.html', context) 
       
       
 

@@ -9,19 +9,22 @@
             <input type="text" name="q" placeholder="search">
             <input type="submit" value="rechercher" class="border-2 border-orange-400 rounded-lg p-1"/>
         </form> 
-    </div>    
+    </div> 
+        {% if wines is not None or cheeses is not None %}  
             <ul>
-            {% for wine in wines %}   
-                    <li><a href="{% url 'wine-product' id=wine.id %}" class="hover:underline"> {{ wine.name }}, {{ wine.appellation }}, {{ wine.color }} </a></li>
-            {% endfor %} 
-            </ul>  
-            <br/> 
+                {% for wine in wines %}   
+                        <li><a href="{% url 'wine-product' id=wine.id %}" class="hover:underline"> {{ wine.name }}, {{ wine.appellation }}, {{ wine.color }} </a></li>
+                {% endfor %} 
+            </ul>
             <ul>
-            {% for cheese in cheeses %}   
+                {% for cheese in cheeses %}   
                     <li><a href="{% url 'cheese-product' id=cheese.id %}"class="hover:underline">  {{ cheese.name }}, {{ cheese.region }}, {{ cheese.type_of_milk }} </a></li>
-            {% endfor %} 
-            </ul>  
-        <br/>        
+                {% endfor %} 
+            </ul> 
+        {% else %} 
+            <br/> 
+        {% endif %}  
+      
 
     {% else %}
         <p>Vous n'êtes pas connecté.e</p>
