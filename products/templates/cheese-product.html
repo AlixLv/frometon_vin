@@ -6,7 +6,7 @@
     <p>Région : {{ product_object.region }}</p>
     <p>Description : {{ product_object.description }}</p>
     <br/>
-    <!-- envoi de l'id du product via un formulaire -->
+    <!-- envoi du nom du product via un formulaire -->
     <form action="{% url 'pairing' %}" method="get">
         <input type="hidden" name="product_name" value="{{ product_object.name }}">
         <button type="submit" class="border-2 border-orange-400 rounded-lg p-1">Trouver un accord</button>

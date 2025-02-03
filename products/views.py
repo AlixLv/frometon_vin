@@ -40,6 +40,7 @@ class WhiteWines(TemplateView):
 class RoseWines(TemplateView):
     template_name = "rose-wines.html"    
 
+
 def detail_cheese_product_view(request, id=None):
     product_object = None
     if id is not None:

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+    {% block content %}
+        {% for favourite in favourites %}
+            <div>
+                <p>Fromage : {{ favourite.pairing.cheese.name }}</p>
+                <p>Vin : {{ favourite.pairing.wine.name }} {{ favourite.pairing.wine.year }}</p>
+                <p>Ajouté le : {{ favourite.created_at }}</p>
+            </div>
+            <br/>
+        {% endfor %}
+    {% endblock content %}

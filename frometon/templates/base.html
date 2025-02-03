@@ -13,6 +13,7 @@
         <nav class="flex flex-row justify-evenly mb-5 text-stone-950 text-lg text-center font-medium">
             <a href="{% url 'home' %}" class="hover:underline">Home</a>
                 <a href="{% url 'profile' id=request.user.id %}" class="hover:underline">Profil</a>
+                <a href="{% url 'favourites' id=request.user.id %}" class="hover:underline">Favoris</a>
                 <select onchange="location = this.value;">
                     <option>Fromages</option>
                     <option value="{% url 'all-cheeses' %}">Tous les fromages</option>

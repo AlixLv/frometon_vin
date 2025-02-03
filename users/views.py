@@ -3,8 +3,9 @@ from .forms import LoginForm, RegisterForm, UpdateUserForm
 from django.contrib import messages
 from django.contrib.auth import login as auth_login, authenticate, logout
 from django.contrib.auth.forms import PasswordChangeForm
-from products.models import Cheese, Wine
-from django.http import Http404
+from products.models import Cheese, Wine, Pairing
+from .models import Favourite, CustomUser
+from django.http import Http404, HttpResponse
 from django.urls import reverse
 
 
@@ -173,5 +174,52 @@ def update_password(request, id=None):
             
     else:
         form = PasswordChangeForm(user = request.user)
-    return render(request, './edit-password.html', {"form": form})    
-         
+    return render(request, './edit-password.html', {"form": form})
+
+
+def get_favourites(request, id=None):
+    if request.user.is_authenticated and id == request.user.id:
+        print("🟣 ", request.user, id)  
+        # utilisation de select_related pour éviter n+1 query problem
+        # une seule query plus complexe; amélioration des performances 
+        # select_related sélectionne les objets en relation ForeignKeys dans le modèle Favourite
+        favourites_user = Favourite.objects.filter(user__id=id).select_related('pairing__cheese', 'pairing__wine')
+        print("🟡 ", favourites_user)
+
+        context = {
+            "favourites": favourites_user
+        }
+            
+        
+        return render(request, './favourites.html', context)      
+
+
+def add_favourite(request):
+    if request.method == 'POST':
+        pairing_str = request.POST.get('favourite_pairing')
+        print("💙 ", pairing_str)
+        
+        try:
+            cheese_id = pairing_str.split('cheese:')[1].split('-')[0]
+            print("🧀 ", cheese_id)
+            
+            wine_id = pairing_str.split('wine:')[1]
+            print("🍷 ", wine_id)
+
+            pairing_to_add = Pairing.objects.get(cheese=cheese_id, wine=wine_id)
+            print("💛 ", pairing_to_add, type(pairing_to_add))
+            
+            user_logged = CustomUser.objects.get(id=request.user.id)
+            print("👑 ", user_logged, type(user_logged))
+            Favourite.objects.create(user=user_logged, pairing=pairing_to_add)
+
+            return redirect('favourites', id=request.user.id)
+        
+        except Exception as e:
+            return HttpResponse(f"Erreur lors de l'ajout aux favoris : {str(e)}", status=400)   
+    
+    return HttpResponse("Méthode non autorisée", status=405)
+
+
+def delete_favourite(request):
+    return 0         

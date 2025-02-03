@@ -9,5 +9,7 @@ urlpatterns = [
     path('register', views.register_view, name="register"),
     path('profile/<int:id>/', views.get_profile, name="profile"),
     path('edit-profile/<int:id>', views.update_profile, name="edit-profile"),
-    path('edit-password/<int:id>', views.update_password, name="edit-password")
+    path('edit-password/<int:id>', views.update_password, name="edit-password"),
+    path('favourites/<int:id>/', views.get_favourites, name="favourites"),
+    path('add-favourite', views.add_favourite, name="add-favourite")
 ]

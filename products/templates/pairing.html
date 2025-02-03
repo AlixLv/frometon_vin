@@ -1,9 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Accords</h1>
-    <p>{{ searched_product.name }}</p>
-    <p>s'accorde avec : </p>
+    <p>{{ searched_product.name }} s'accorde avec :</p>
     {% for object in objects_pairing_list %}
-        <p>{{ object.name }}</p>         
+        {% for pairing in pairings_list %}
+            <p> {{ pairing }} </p>
+            <p>- <a href="{% url 'wine-product' id=object.id %}" class="hover:underline">{{ object.name }}</a></p> 
+            <form action="{% url 'add-favourite' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="favourite_pairing" value="{{ pairing }}">
+                <button type="submit" class="border-2 border-orange-400 rounded-lg p-1">Ajouter aux favoris</button>  
+            </form>        
+        {% endfor %}
     {% endfor %}
 {% endblock content %}
