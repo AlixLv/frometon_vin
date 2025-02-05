@@ -1,20 +1,24 @@
 {% extends 'base.html' %}
     {% block content %}
-        {% if favourites %}
-            {% for favourite in favourites %}
-                <div>
-                    <p>Fromage : {{ favourite.pairing.cheese.name }}</p>
-                    <p>Vin : {{ favourite.pairing.wine.name }} {{ favourite.pairing.wine.year }}</p>
-                    <p>Ajouté le : {{ favourite.created_at }}</p>
-                </div>
-                <div>
-                    <form action="{% url 'delete-favourite' %}" method="post">
-                        {% csrf_token %}
-                        <input type="hidden" name="favourite_pairing" value="{{ favourite }}">
-                        <button type="submit" class="border-2 border-orange-400 rounded-lg p-1">Retirer des favoris</button>  
-                    </form> 
-                </div>
-                <br/>          
+        {% if grouped_favourites %}
+            {% for family, favourite in grouped_favourites.items %}
+                <p class="text-lg font-mono mt-10">{{ family }}</p>
+                    {% for fav in favourite %}
+                        <div class="flex flex-row items-center mb-6"> 
+                            <div class="mr-8">
+                                <p>Fromage : {{ fav.pairing.cheese.name }}</p>
+                                <p>Vin : {{ fav.pairing.wine.name }} {{ fav.pairing.wine.year }}</p>
+                                <p>Ajouté le : {{ fav.created_at }}</p>
+                            </div>
+                            <div>
+                                <form action="{% url 'delete-favourite' %}" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="favourite_pairing" value="{{ fav }}">
+                                    <button type="submit" class="border-2 border-orange-400 rounded-lg p-1">Retirer des favoris</button>  
+                                </form> 
+                            </div> 
+                        </div> 
+                    {% endfor %}               
             {% endfor %} 
         {% else %}
                 <p>Vous n'avez pas encore de favoris.</p>

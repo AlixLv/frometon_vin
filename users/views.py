@@ -183,11 +183,19 @@ def get_favourites(request, id=None):
         # utilisation de select_related pour éviter n+1 query problem
         # une seule query plus complexe; amélioration des performances 
         # select_related sélectionne les objets en relation ForeignKeys dans le modèle Favourite
-        favourites_user = Favourite.objects.filter(user__id=id).select_related('pairing__cheese', 'pairing__wine')
+        favourites_user = Favourite.objects.filter(user__id=id).select_related('pairing__cheese', 'pairing__wine').order_by('pairing__cheese__family')
         print("🟡 ", favourites_user)
+        
+        grouped_favourites = {}
+        for favourite in favourites_user:
+            fam = favourite.pairing.cheese.family
+            if fam not in grouped_favourites:
+                grouped_favourites[fam] = []
+            grouped_favourites[fam].append(favourite)    
+        print("🐹 ", grouped_favourites, type(grouped_favourites))
 
         context = {
-            "favourites": favourites_user
+            "grouped_favourites": grouped_favourites,
         }
             
         return render(request, './favourites.html', context)      
