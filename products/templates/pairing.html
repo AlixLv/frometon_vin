@@ -3,7 +3,6 @@
     <p>{{ searched_product.name }} s'accorde avec :</p>
     {% for object in objects_pairing_list %}
         {% for pairing in pairings_list %}
-            <p> {{ pairing }} </p>
             <p>- <a href="{% url 'wine-product' id=object.id %}" class="hover:underline">{{ object.name }}</a></p> 
             <form action="{% url 'add-favourite' %}" method="post">
                 {% csrf_token %}

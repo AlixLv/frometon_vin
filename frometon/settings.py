@@ -81,6 +81,7 @@ TEMPLATES = [
                 'frometon.context_processors.wine_categories',
                 'frometon.context_processors.get_cheeses',
                 'frometon.context_processors.get_wines',
+                'frometon.context_processors.cheese_families'
             ],
         },
     },

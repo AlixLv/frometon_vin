@@ -190,7 +190,6 @@ def get_favourites(request, id=None):
             "favourites": favourites_user
         }
             
-        
         return render(request, './favourites.html', context)      
 
 
@@ -206,20 +205,64 @@ def add_favourite(request):
             wine_id = pairing_str.split('wine:')[1]
             print("🍷 ", wine_id)
 
-            pairing_to_add = Pairing.objects.get(cheese=cheese_id, wine=wine_id)
+            pairing_to_add = get_object_or_404(Pairing, cheese=cheese_id, wine=wine_id)
             print("💛 ", pairing_to_add, type(pairing_to_add))
             
-            user_logged = CustomUser.objects.get(id=request.user.id)
+            user_logged = get_object_or_404(CustomUser, id=request.user.id)
             print("👑 ", user_logged, type(user_logged))
             Favourite.objects.create(user=user_logged, pairing=pairing_to_add)
 
             return redirect('favourites', id=request.user.id)
-        
+        # toute exception se produisant dans le bloc try est capturée dans le bloc except
+        # e représente l'instance de classe Exception et permet d'accéder aux infos de l'erreur
+        except Pairing.DoesNotExist:
+            return HttpResponse("L'accord demandé n'existe pas.", status=404)
+        except CustomUser.DoesNotExist:
+            return HttpResponse("L'utilisateur.rice n'existe pas.", status=404)
         except Exception as e:
-            return HttpResponse(f"Erreur lors de l'ajout aux favoris : {str(e)}", status=400)   
+            return HttpResponse(f"Erreur inattendue : {str(e)}", status=400)   
     
     return HttpResponse("Méthode non autorisée", status=405)
 
 
 def delete_favourite(request):
-    return 0         
+    if request.method == 'POST':
+        favourite_str = request.POST.get('favourite_pairing')
+        print("❌ ", favourite_str, type(favourite_str)) 
+       
+        try:
+            cheese_id = favourite_str.split('cheese:')[1].split('-')[0]
+            print("🧀 cheese id: ", cheese_id, )
+            
+            wine_id = favourite_str.split('wine:')[1]
+            print("🍷 wine id: ", wine_id)
+            
+            pairing_obj = get_object_or_404(Pairing, cheese=cheese_id, wine=wine_id)
+            print("💔 pairing to delete: ", pairing_obj, type(pairing_obj))
+            print(pairing_obj.id)
+            
+            user_logged = get_object_or_404(CustomUser, id=request.user.id)
+            print("👑 user: ", user_logged, type(user_logged))
+            
+            user_favourites = get_list_or_404(Favourite, user__username=user_logged.username)
+            print("💛 user's favourites: ", user_favourites, type(user_favourites))
+            
+            for favourite in user_favourites:
+                # identification de l'id de l'instance Pairing associée au favoris (relation ForeignKey)
+                if favourite.pairing.id == pairing_obj.id:
+                    print("✅ pairing object associated id: ", favourite.pairing.id, "favourite pairing object id: ", pairing_obj.id)
+                    favourite.delete()
+                    break
+            
+            updated_user_favourites = Favourite.objects.filter(user__username=user_logged)    
+            print("💝 update user's favourites: ", updated_user_favourites, len(updated_user_favourites))
+            
+            return redirect('favourites', id=request.user.id)
+        
+        except CustomUser.DoesNotExist:
+            return HttpResponse("L'utilisateur.rice n'existe pas.", status=404) 
+        except Pairing.DoesNotExist:
+            return HttpResponse("L'accord recherché n'existe pas.", status=404) 
+        except Exception as e:
+            return HttpResponse(f"Erreur inattendue : {str(e)}", status=400)      
+    return HttpResponse("Méthode non autorisée", status=405)         

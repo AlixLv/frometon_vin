@@ -1,11 +1,22 @@
 {% extends 'base.html' %}
     {% block content %}
-        {% for favourite in favourites %}
-            <div>
-                <p>Fromage : {{ favourite.pairing.cheese.name }}</p>
-                <p>Vin : {{ favourite.pairing.wine.name }} {{ favourite.pairing.wine.year }}</p>
-                <p>Ajouté le : {{ favourite.created_at }}</p>
-            </div>
-            <br/>
-        {% endfor %}
+        {% if favourites %}
+            {% for favourite in favourites %}
+                <div>
+                    <p>Fromage : {{ favourite.pairing.cheese.name }}</p>
+                    <p>Vin : {{ favourite.pairing.wine.name }} {{ favourite.pairing.wine.year }}</p>
+                    <p>Ajouté le : {{ favourite.created_at }}</p>
+                </div>
+                <div>
+                    <form action="{% url 'delete-favourite' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="favourite_pairing" value="{{ favourite }}">
+                        <button type="submit" class="border-2 border-orange-400 rounded-lg p-1">Retirer des favoris</button>  
+                    </form> 
+                </div>
+                <br/>          
+            {% endfor %} 
+        {% else %}
+                <p>Vous n'avez pas encore de favoris.</p>
+        {% endif %}         
     {% endblock content %}
