@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
     <p>{{ searched_product.name }} s'accorde avec :</p>
-    {% for object in objects_pairing_list %}
-        {% for pairing in pairings_list %}
-            <p>- <a href="{% url 'wine-product' id=object.id %}" class="hover:underline">{{ object.name }}</a></p> 
-            <form action="{% url 'add-favourite' %}" method="post">
+    {% for pairing, product in pairings.items %}
+        {% for prod in product %}
+            {% if product_type == "cheese" %}
+                <p>- <a href="{% url 'wine-product' id=prod.wine.id %}" class="hover:underline">{{ prod.wine.name }}</a></p> 
+            {% else %}
+                <p>- <a href="{% url 'cheese-product' id=prod.cheese.id %}" class="hover:underline">{{ prod.cheese.name }}</a></p> 
+            {% endif %}    
+                <form action="{% url 'add-favourite' %}" method="post">
                 {% csrf_token %}
                 <input type="hidden" name="favourite_pairing" value="{{ pairing }}">
                 <button type="submit" class="border-2 border-orange-400 rounded-lg p-1">Ajouter aux favoris</button>  

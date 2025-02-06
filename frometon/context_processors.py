@@ -24,7 +24,3 @@ def wine_categories(request):
     colors = Wine.objects.values_list('color', flat=True).distinct()
     return {'wine_categories': colors}
 
-
-def cheese_families(request):
-    families = Cheese.objects.values_list('family', flat=True).distinct()
-    return {'cheese_families': families}

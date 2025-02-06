@@ -70,6 +70,7 @@ def detail_wine_product_view(request, id=None):
 
 def get_pairing(request):
     objects_pairing_list = []
+    product_type = None
     
     # Récupère la valeur du paramètre 'product_name' du QueryDict envoyé via form
     name_product = request.GET.get('product_name')
@@ -81,39 +82,42 @@ def get_pairing(request):
             print("🐢 ", searched_product, type(searched_product))
             id_product = searched_product.id
             print("🪲", id_product, type(id_product))   
+            product_type = "cheese"
+            print("🥑 ", product_type)
             
             pairings_list = Pairing.objects.filter(cheese=id_product)
             print("🐍 ", pairings_list)
-            pairings_id_list = get_list_or_404(Pairing.objects.filter(cheese=id_product).values_list("id", flat=True))
-            print("🦚 ", pairings_id_list)       
-            
+
         except Http404:
             try:
                 searched_product = get_object_or_404(Wine, name=name_product)
                 print("🐢 ", searched_product, type(searched_product))  
-                print("🔥 HTP404", name_product)
                 id_product = searched_product.id
                 print("🦞", id_product, type(id_product))
+                product_type = "wine"
+                print("🥑 ", product_type)
                 
                 pairings_list = Pairing.objects.filter(wine=id_product)
                 print("🐍 ", pairings_list)
-                pairings_id_list = get_list_or_404(Pairing.objects.filter(wine=id_product).values_list("id", flat=True))
-                print("🦚 ", pairings_id_list) 
 
             except:
                     return redirect('not-found')
-
+        
+        pairings = {}
+    
         for pairing in pairings_list:
-            if searched_product._meta.verbose_name == "cheese":
-                objects_pairing_list.append(Wine.objects.get(id=pairing.wine.id))
-            else:
-                objects_pairing_list.append(Cheese.objects.get(id=pairing.cheese.id))
-        print("🦑", objects_pairing_list, type(objects_pairing_list))        
+            print(pairing.id)   
+            id = pairing.id
+            if id not in pairings:
+                pairings[id] = []
+            pairings[id].append(pairing)
+        print("🦁 ", pairings)               
+                       
                 
         context = {
             "searched_product": searched_product,
-            "pairings_list": pairings_list,
-            "objects_pairing_list": objects_pairing_list
+            "product_type": product_type,
+            "pairings": pairings
         }
 
         return render(request, './pairing.html', context=context)

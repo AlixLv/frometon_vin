@@ -204,22 +204,32 @@ def get_favourites(request, id=None):
 def add_favourite(request):
     if request.method == 'POST':
         pairing_str = request.POST.get('favourite_pairing')
-        print("💙 ", pairing_str)
+        print("💙 ", pairing_str, type(pairing_str))
+        in_list = None
         
         try:
-            cheese_id = pairing_str.split('cheese:')[1].split('-')[0]
-            print("🧀 ", cheese_id)
-            
-            wine_id = pairing_str.split('wine:')[1]
-            print("🍷 ", wine_id)
-
-            pairing_to_add = get_object_or_404(Pairing, cheese=cheese_id, wine=wine_id)
-            print("💛 ", pairing_to_add, type(pairing_to_add))
+            pairing_to_add = get_object_or_404(Pairing, id=pairing_str)
+            print("💛 ", pairing_to_add, type(pairing_to_add), pairing_to_add.id)
             
             user_logged = get_object_or_404(CustomUser, id=request.user.id)
             print("👑 ", user_logged, type(user_logged))
-            Favourite.objects.create(user=user_logged, pairing=pairing_to_add)
-
+            
+            check_favourites = get_list_or_404(Favourite.objects.filter(user__username=user_logged))
+            print("🥨 ", check_favourites)
+            
+            for favourite in check_favourites:
+                if favourite.pairing.id == pairing_to_add.id:
+                    print("🍉", favourite, favourite.pairing.id, "----", pairing_to_add.id)
+                    in_list= True
+                    break
+                else:
+                    in_list=False
+                    
+            if in_list == True:
+                return HttpResponse("Vous avez déjà enregistré cet accord !", status=404)
+            else:
+                Favourite.objects.create(user=user_logged, pairing=pairing_to_add)
+            
             return redirect('favourites', id=request.user.id)
         # toute exception se produisant dans le bloc try est capturée dans le bloc except
         # e représente l'instance de classe Exception et permet d'accéder aux infos de l'erreur
