@@ -42,7 +42,11 @@ module.exports = {
         '../../**/*.py'
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                FF: ['Ubuntu', 'sans']
+            }
+        },
     },
     plugins: [
         /**
