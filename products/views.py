@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404, get_list_or_404
 from products.models import Cheese, Wine, Pairing 
-from django.http import Http404
+from django.http import Http404, JsonResponse
 from django.views.generic import TemplateView
+import requests
 
 
 
@@ -41,11 +42,24 @@ class RoseWines(TemplateView):
     template_name = "rose-wines.html"    
 
 
+def fetch_cheeses(request):
+    base_url = "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/fromagescsv-fromagescsv/records?"
+
+    records_number = "5"
+
+    complete_url = base_url + "?limit=0" + records_number
+
+    response = requests.get(complete_url)
+    data = response.json()
+    print("🌈 ", data)
+    return JsonResponse(data)
+
+
 def detail_cheese_product_view(request, id=None):
     product_object = None
     if id is not None:
         id_object = id
-        product_object = get_object_or_404(Cheese, id=id)
+        product_object = get_object_or_404(Cheese.objects.get_detail_cheese_product(id_object))
         
     context = {
             "product_object" : product_object, 
@@ -59,7 +73,8 @@ def detail_wine_product_view(request, id=None):
     product_object = None
     if id is not None:
         id_object = id
-        product_object = get_object_or_404(Wine, id=id)
+        product_object = get_object_or_404(Wine.objects.get_detail_wine_product(id_object))
+
     context = {
             "product_object" : product_object, 
             "id" : id_object       
@@ -85,7 +100,8 @@ def get_pairing(request):
             product_type = "cheese"
             print("🥑 ", product_type)
             
-            pairings_list = Pairing.objects.filter(cheese=id_product)
+            #pairings_list = Pairing.objects.filter(cheese=id_product)
+            pairings_list = get_list_or_404(Pairing.cheese_objects.get_list_cheese_pairings(cheese=id_product))
             print("🐍 ", pairings_list)
 
         except Http404:
@@ -97,7 +113,8 @@ def get_pairing(request):
                 product_type = "wine"
                 print("🥑 ", product_type)
                 
-                pairings_list = Pairing.objects.filter(wine=id_product)
+                #pairings_list = Pairing.objects.filter(wine=id_product)
+                pairings_list = get_list_or_404(Pairing.wine_objects.get_list_wine_pairings(wine=id_product))
                 print("🐍 ", pairings_list)
 
             except:

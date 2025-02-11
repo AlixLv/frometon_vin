@@ -17,9 +17,7 @@ urlpatterns = [
   path('wine-product/<int:id>/', views.detail_wine_product_view, name="wine-product"),
   path('pairing/', views.get_pairing, name="pairing"), 
   path('not-found/', views.data_not_found, name="not-found"),
+  path('map-cheeses', views.fetch_cheeses, name="map-cheeses")
 ]
 
 
-#blanc
-#rouge
-#rosé
