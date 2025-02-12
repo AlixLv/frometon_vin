@@ -38,7 +38,7 @@ class Favourite(models.Model):
     pairing = models.ForeignKey(Pairing, on_delete=models.CASCADE, related_name="favourited_by")
     created_at = models.DateTimeField(auto_now=True, null=True, blank=True)  
     
-    objects = FavouriteManager()
+    user_favourites = FavouriteManager()
     
     def __str__(self):
         return f"{self.user} 's favourite : {self.pairing}"   
