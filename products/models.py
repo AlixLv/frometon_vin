@@ -1,9 +1,23 @@
 from django.db import models
 
 
+
+class AllCheesesManager(models.Manager):
+    def get_all_cheeses(self):
+        return self.objects.all()
+
+
 class CheeseDetailManager(models.Manager):
     def get_detail_cheese_product(self, id):
         return self.filter(id = id)
+
+
+class CheeseCategoryManager(models.Manager):
+    def get_cheese_by_category(self):
+     # values_list pour retourner une liste de valeurs sur le champs "type_of_milk"
+    # argument flat=True pour indiquer qu'on veut une liste simple de valeurs, pas de tuples
+    # distinct() pour garantir des valeurs uniques
+        return self.values_list('type_of_milk', flat=True).distinct()
 
 
 class Cheese(models.Model):
@@ -14,8 +28,10 @@ class Cheese(models.Model):
     description = models.TextField(max_length=500)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
-    
-    objects = CheeseDetailManager()
+    # Manager #
+    objects = AllCheesesManager()
+    category_cheese = CheeseCategoryManager()
+    detail_cheese = CheeseDetailManager()
     
     def __str__(self):
         return self.name

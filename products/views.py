@@ -59,7 +59,8 @@ def detail_cheese_product_view(request, id=None):
     product_object = None
     if id is not None:
         id_object = id
-        product_object = get_object_or_404(Cheese.objects.get_detail_cheese_product(id_object))
+        product_object = get_object_or_404(Cheese.detail_cheese.filter(id=id_object))
+        print("🍿 ", product_object)
         
     context = {
             "product_object" : product_object, 

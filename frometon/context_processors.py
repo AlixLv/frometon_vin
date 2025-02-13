@@ -3,6 +3,7 @@ from products.models import Cheese, Wine
 
 def get_cheeses(request):
     cheeses = Cheese.objects.all()
+    print("🥠 ", cheeses)
     return {'cheeses': cheeses}
 
 
@@ -13,10 +14,7 @@ def get_wines(request):
 
 
 def cheese_categories(request):
-    # values_list pour retourner une liste de valeurs sur le champs "type_of_milk"
-    # argument flat=True pour indiquer qu'on veut une liste simple de valeurs, pas de tuples
-    # distinct() pour garantir des valeurs uniques
-    types_of_milk = Cheese.objects.values_list('type_of_milk', flat=True).distinct()
+    types_of_milk = Cheese.category_cheese
     return {'cheese_categories': types_of_milk}
 
 
