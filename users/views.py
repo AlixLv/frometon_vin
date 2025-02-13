@@ -118,11 +118,13 @@ def get_profile(request, id=None):
     username = None
     if request.user.is_authenticated:
         print("👀 ", request.user.username, request.user.email, request.user.id)
-        user_info = get_object_or_404(CustomUser.objects.get_user_info(request.user.id))
-        print("🍕 ", user_info)
+        user_info = get_object_or_404(CustomUser.user_info.filter(id=request.user.id))
+        print("🍕 ", user_info, type(user_info))
 
         context = {
-            "user_info": user_info
+            "id":user_info.id,
+            "username": user_info.username,
+            "email": user_info.email
         }
         return render(request, './profile.html', context)
     else:
@@ -138,6 +140,7 @@ def update_profile(request, id=None):
             print("✅ ", form)
             if form.is_valid():
                 user = form.save()
+                print("🥗 ", user.id, type(user.id))
                 
                 context = {
                     "username": user.username,
