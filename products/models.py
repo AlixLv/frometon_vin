@@ -44,6 +44,16 @@ class Cheese(models.Model):
         verbose_name_plural = "cheeses"
         
 
+class AllWinesManager(models.Manager):
+    def get_all_wines(self):
+        return self.objects.all()
+
+
+class WineCategoryManager(models.Manager):
+    def get_wine_by_color(self):
+        return self.values_list('color', flat=True).distinct()
+
+
 class WineDetailManager(models.Manager):
     def get_detail_wine_product(self, id):
         return self.filter(id = id)
@@ -59,8 +69,10 @@ class Wine(models.Model):
     description = models.TextField(max_length=500)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)  
-    
-    objects = WineDetailManager()
+    # Manager #
+    objects = AllWinesManager()
+    category_wine = WineCategoryManager()
+    detail_wine = WineDetailManager()
     
     def __str__(self):
         return f"{self.name}, {self.year}" 

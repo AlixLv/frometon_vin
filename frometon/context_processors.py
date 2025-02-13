@@ -19,6 +19,6 @@ def cheese_categories(request):
 
 
 def wine_categories(request):
-    colors = Wine.objects.values_list('color', flat=True).distinct()
+    colors = Wine.category_wine.all()
     return {'wine_categories': colors}
 

@@ -74,7 +74,7 @@ def detail_wine_product_view(request, id=None):
     product_object = None
     if id is not None:
         id_object = id
-        product_object = get_object_or_404(Wine.objects.get_detail_wine_product(id_object))
+        product_object = get_object_or_404(Wine.detail_wine.filter(id=id_object))
 
     context = {
             "product_object" : product_object, 
