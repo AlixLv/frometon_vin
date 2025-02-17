@@ -182,7 +182,7 @@ def get_favourites(request, id=None):
     if request.user.is_authenticated:
         print("🟣 ", request.user, id)  
         #favourites_user = Favourite.objects.filter(user__id=id).select_related('pairing__cheese', 'pairing__wine').order_by('pairing__cheese__family')
-        favourites_user = Favourite.objects.get_user_favourites(user=id)
+        favourites_user = Favourite.user_favourites.filter(user=id)
         print("🟡 ", favourites_user)
         
         grouped_favourites = {}
@@ -213,10 +213,10 @@ def add_favourite(request):
             print("💛 ", pairing_to_add, type(pairing_to_add), pairing_to_add.id)
             
             #user_logged = get_object_or_404(CustomUser, id=request.user.id)
-            user_logged = get_object_or_404(CustomUser.objects.get_user_info(id=request.user.id))
-            print("👑 ", user_logged, type(user_logged))
+            user_logged = get_object_or_404(CustomUser.user_info)
+            print("👑 ", user_logged)
             
-            check_favourites = get_list_or_404(Favourite.objects.filter(user__username=user_logged))
+            check_favourites = Favourite.user_favourites.filter(user__username=user_logged)
             print("🥨 ", check_favourites)
             
             for favourite in check_favourites:
@@ -263,10 +263,10 @@ def delete_favourite(request):
             print(pairing_obj.id)
             
             #user_logged = get_object_or_404(CustomUser, id=request.user.id)
-            user_logged = get_object_or_404(CustomUser.objects.get_user_info(id=request.user.id))
+            user_logged = get_object_or_404(CustomUser.user_info)
             print("👑 user: ", user_logged, type(user_logged))
             
-            user_favourites = get_list_or_404(Favourite.objects.get_user_favourites(user=user_logged))
+            user_favourites = get_list_or_404(Favourite.user_favourites.filter(user=user_logged))
             print("💛 user's favourites: ", user_favourites, type(user_favourites))
             
             for favourite in user_favourites:
@@ -277,7 +277,7 @@ def delete_favourite(request):
                     break
             
             #updated_user_favourites = Favourite.objects.filter(user__username=user_logged)    
-            updated_user_favourites = get_list_or_404(Favourite.objects.get_user_favourites(user=user_logged))
+            updated_user_favourites = get_list_or_404(Favourite.objects.filter(user=user_logged))
             print("💝 update user's favourites: ", updated_user_favourites, len(updated_user_favourites))
             
             return redirect('favourites', id=request.user.id)

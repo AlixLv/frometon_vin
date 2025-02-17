@@ -22,7 +22,7 @@ class UserInfoManager(models.Manager):
 #override sur classe AbstractUser pour rendre champs email obligatoire
 class CustomUser(AbstractUser):
     email = models.EmailField('email address', unique=True, blank=False)
-    
+    # Manager #
     objects = BaseUserManager()
     user_info = UserInfoManager()
     
@@ -37,6 +37,11 @@ class CustomUser(AbstractUser):
         verbose_name_plural = "custom users"
 
 
+class BaseFavouriteManager(models.Manager):
+    def get_all_favourites(self):
+        return self.objects.all()
+
+
 class FavouriteManager(models.Manager):
     def get_user_favourites(self, user):
         # utilisation de select_related pour éviter n+1 query problem
@@ -49,8 +54,9 @@ class Favourite(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="favourites")
     pairing = models.ForeignKey(Pairing, on_delete=models.CASCADE, related_name="favourited_by")
     created_at = models.DateTimeField(auto_now=True, null=True, blank=True)  
-    
-    objects = FavouriteManager()
+    # Manager #
+    user_favourites = FavouriteManager()
+    objects = BaseFavouriteManager()
     
     def __str__(self):
         return f"{self.user} 's favourite : {self.pairing}"   
