@@ -1,11 +1,19 @@
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
 from products.models import Pairing
 
 
+class BaseUserManager(BaseUserManager):
+    def get_all_users(self):
+        return self.objects.all()
+
+
 class UserInfoManager(models.Manager):
-    def get_user_info(self, id):
-        return self.filter(id=id)
+    # def get_user_info(self, id):
+    #     return self.filter(id=id)
+    
+    def get_by_natural_key(self, username):
+        return self.get(username = username)
 
 
 #AbstractUser = classe de base qui contient tous les champs et méthodes de User mais n'est pas elle-même un modèle concret
@@ -15,10 +23,14 @@ class UserInfoManager(models.Manager):
 class CustomUser(AbstractUser):
     email = models.EmailField('email address', unique=True, blank=False)
     
-    objects = UserInfoManager()
+    objects = BaseUserManager()
+    user_info = UserInfoManager()
     
     def __str__(self):
         return self.username
+    
+    def natural_key(self):
+        return (self.username)
     
     class Meta:
         verbose_name = "custom user"
