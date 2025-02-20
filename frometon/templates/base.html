@@ -8,10 +8,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {% block head %}<title>Frometon</title>{% endblock %}
         {% tailwind_css %}
-    </head>
-    {% block body %}
-        <body class="font-FF bg-white">
-            <nav class="flex flex-row justify-evenly mb-5 mt-3 text-stone-950 text-lg text-center font-medium font-FF">
+    </head> 
+    <body class="font-FF bg-white h-screen">  
+        {% block body %}  
+        <header>
+            <nav class="flex flex-row justify-evenly pt-3 text-stone-950 text-lg text-center font-medium font-FF">
                 <a href="{% url 'home' %}" class="hover:underline hover:text-stone-600">Home</a>
                     <a href="{% url 'profile' id=request.user.id %}" class="hover:underline hover:text-stone-600">Profil</a>
                     <a href="{% url 'favourites' id=request.user.id %}" class="hover:underline hover:text-stone-600">Favoris</a>
@@ -31,9 +32,10 @@
                         <option value="{% url 'rose-wines' %}">Vins rosés</option>
                     </select>          
             </nav>
-            <br/>
-            {% block content %}
-            {% endblock %}
+            <br/>   
+        </header>  
+        {% block content %}
+        {% endblock %}
         {% endblock %}
     </body>
 </html>
