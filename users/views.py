@@ -71,7 +71,6 @@ def home(request):
     
     # on vérifie qu'on reçoit bien la data:
     if query is not None:
-
         try:
             cheeses_to_display = get_list_or_404(Cheese.objects.filter(name__icontains=query)) 
             print("🐶 ", cheeses_to_display, type(cheeses_to_display))
