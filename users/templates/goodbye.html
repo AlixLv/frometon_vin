@@ -1,6 +1,13 @@
+{# django #}
+{% load static tailwind_tags %}
+{% tailwind_css %}
 {% block content %}
-    <h2>À bientôt !</h2>
-    <a href="{% url 'login' %}">
-        <input type="submit" value="Se connecter">
-    </a>
+<div class="h-screen flex flex-col justify-center items-center font-FF bg-white">
+    <div class="h-3/5 w-3/12 flex flex-col justify-center items-center">
+        <p class="text-xl font-semibold mb-4">À bientôt !</p>
+        <a href="{% url 'login' %}">
+            <input type="submit" value="Se connecter" class="cursor-pointer border-2 border-orange-400 bg-gradient-to-br from-pink-500 to-orange-400 rounded-lg p-1 px-2">
+        </a>
+    </div>
+</div>
 {% endblock content %}
