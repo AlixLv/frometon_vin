@@ -6,9 +6,6 @@ Are you about to enjoy a good cheese and want to find a wine to go with it?
 Frometon offers a range of cheese and wine pairings. After registering on the site, you can search by cheese name or wine name for suggested pairings.
 
 
-![Homepage of Frometon]()
-
-
 ### Main features of the app:
 - create a account
 - search for a cheese or a wine name
