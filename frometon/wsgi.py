@@ -15,4 +15,5 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'frometon.settings')
 
 application = get_wsgi_application()
 
+# connecting Django app on Vercel
 app = application 

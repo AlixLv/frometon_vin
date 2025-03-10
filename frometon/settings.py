@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
+ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app", ".now.sh", "*"]
 
 # Application definition
 
@@ -151,4 +152,4 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app", ".now.sh", "*"]
+
