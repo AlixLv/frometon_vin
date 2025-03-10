@@ -143,7 +143,7 @@ USE_TZ = True
 # Indication à Django pour trouver le dossier static, situé dans le BASE_DIR frometon
 # STATICFILES_DIRS = [BASE_DIR / "static",]
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static') 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static', 'staticfiles') 
 STATIC_URL = '/staticfiles/' 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
