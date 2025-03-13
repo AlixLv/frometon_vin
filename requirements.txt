@@ -10,6 +10,7 @@ cookiecutter==2.6.0
 cssbeautifier==1.15.1
 Django==5.1.4
 django-browser-reload==1.17.0
+django-environ==0.12.0
 django-tailwind==3.8.0
 djlint==1.36.4
 EditorConfig==0.17.0
