@@ -11,10 +11,15 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-from dotenv import load_dotenv
 import os 
+import environ
+from dotenv import load_dotenv
 
 load_dotenv() # charge les configurations incluses dans .env
+
+# Access environment variables
+env = environ.Env()
+environ.Env.read_env()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,8 +30,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
+SUPABASE_URL = os.getenv('SUPABASE_URL')
+SUPABASE_KEY = os.getenv('SUPABASE_KEY')
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-+2063)p#8%w7zb0jav_y^%c$5+^7-86&zv_8(r4m2-!jezg1!p'
+SECRET_KEY = os.getenv('SUPABASE_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -100,12 +108,27 @@ WSGI_APPLICATION = 'frometon.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 
+#SQLite db
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+
+#Supabase bd
+DATABASES = { 
+    'default': { 
+        'ENGINE': 'django.db.backends.postgresql', 
+        'NAME': 'postgres',
+        'USER': 'postgres.ujouseviyiurmvabhbog',  
+        'PASSWORD': os.getenv('SUPABASE_PASSWORD'), 
+        'HOST': 'aws-0-eu-west-3.pooler.supabase.com',
+        'PORT': '5432',
+        'CERT' : 'prod-cac-2021.crt',
+    } 
+}
 
 
 # Password validation

@@ -21,6 +21,7 @@ markdown-it-py==3.0.0
 MarkupSafe==3.0.2
 mdurl==0.1.2
 pathspec==0.12.1
+psycopg2-binary==2.9.10
 Pygments==2.19.1
 python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
