@@ -210,9 +210,9 @@ def add_favourite(request):
             #pairing_to_add = get_object_or_404(Pairing, id=pairing_str)
             pairing_to_add = get_object_or_404(Pairing.pairing_objects.get_pairing_object(id=pairing_int))
             print("💛 ", pairing_to_add, type(pairing_to_add), pairing_to_add.id)
-            
+        
             #user_logged = get_object_or_404(CustomUser, id=request.user.id)
-            user_logged = get_object_or_404(CustomUser.user_info)
+            user_logged = get_object_or_404(CustomUser.user_info, username = request.user)
             print("👑 ", user_logged)
             
             check_favourites = Favourite.user_favourites.filter(user__username=user_logged)
@@ -262,7 +262,7 @@ def delete_favourite(request):
             print(pairing_obj.id)
             
             #user_logged = get_object_or_404(CustomUser, id=request.user.id)
-            user_logged = get_object_or_404(CustomUser.user_info)
+            user_logged = get_object_or_404(CustomUser.user_info, username=request.user)
             print("👑 user: ", user_logged, type(user_logged))
             
             user_favourites = get_list_or_404(Favourite.user_favourites.filter(user=user_logged))
