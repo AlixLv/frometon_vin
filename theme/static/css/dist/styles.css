@@ -954,20 +954,20 @@ select{
   height: 33.333333%;
 }
 
-.h-screen{
-  height: 100vh;
-}
-
-.h-3\/4{
-  height: 75%;
+.h-3\/5{
+  height: 60%;
 }
 
 .h-4\/5{
   height: 80%;
 }
 
-.h-3\/5{
-  height: 60%;
+.h-screen{
+  height: 100vh;
+}
+
+.w-3\/12{
+  width: 25%;
 }
 
 .w-4{
@@ -980,10 +980,6 @@ select{
 
 .w-6\/12{
   width: 50%;
-}
-
-.w-3\/12{
-  width: 25%;
 }
 
 .flex-shrink{
@@ -1038,14 +1034,6 @@ select{
   flex-wrap: wrap;
 }
 
-.place-content-center{
-  place-content: center;
-}
-
-.content-center{
-  align-content: center;
-}
-
 .content-start{
   align-content: flex-start;
 }
@@ -1054,28 +1042,12 @@ select{
   align-items: center;
 }
 
-.justify-start{
-  justify-content: flex-start;
-}
-
 .justify-center{
   justify-content: center;
 }
 
-.justify-around{
-  justify-content: space-around;
-}
-
 .justify-evenly{
   justify-content: space-evenly;
-}
-
-.justify-items-start{
-  justify-items: start;
-}
-
-.justify-items-center{
-  justify-items: center;
 }
 
 .gap-4{
@@ -1090,10 +1062,6 @@ select{
   --tw-space-y-reverse: 0;
   margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
-}
-
-.justify-self-start{
-  justify-self: start;
 }
 
 .truncate{
@@ -1156,16 +1124,6 @@ select{
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
-.bg-orange-400{
-  --tw-bg-opacity: 1;
-  background-color: rgb(251 146 60 / var(--tw-bg-opacity, 1));
-}
-
-.bg-orange-500{
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 115 22 / var(--tw-bg-opacity, 1));
-}
-
 .bg-gradient-to-br{
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
@@ -1174,11 +1132,6 @@ select{
   --tw-gradient-from: #ec4899 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(236 72 153 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.via-blue-600{
-  --tw-gradient-to: rgb(37 99 235 / 0)  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), #2563eb var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
 .to-orange-400{
@@ -1206,11 +1159,6 @@ select{
 .py-2\.5{
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
-}
-
-.py-2{
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
 }
 
 .pt-3{
@@ -1381,8 +1329,32 @@ select{
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
+.\[-1\:-1\]{
+  -1: -1;
+}
+
+.\[-2\:-1\]{
+  -2: -1;
+}
+
 .\[-2\:space\]{
   -2: space;
+}
+
+.\[-4\:-3\]{
+  -4: -3;
+}
+
+.\[-5\:-3\]{
+  -5: -3;
+}
+
+.\[-6\:-5\]{
+  -6: -5;
+}
+
+.\[-7\:-4\]{
+  -7: -4;
 }
 
 .\[-\:\|\\s\]{
@@ -1427,6 +1399,10 @@ select{
 
 .\[end\:next\]{
   end: next;
+}
+
+.\[end\:space_pos\]{
+  end: space pos;
 }
 
 .\[first\:last\]{
@@ -1509,6 +1485,10 @@ select{
   offset: next offset;
 }
 
+.\[p\:p\]{
+  p: p;
+}
+
 .\[pos\:end_pos\]{
   pos: end pos;
 }
@@ -1549,8 +1529,16 @@ select{
   previous_end: start;
 }
 
+.\[s\:e\]{
+  s: e;
+}
+
 .\[start\:end\]{
   start: end;
+}
+
+.\[start\:i\]{
+  start: i;
 }
 
 .\[start\:match\.end\(\)\]{
@@ -1591,6 +1579,10 @@ select{
 
 .\[user\:passwd\@\]{
   user: passwd@;
+}
+
+.\[value_index\:next_value_index\]{
+  value_index: next value index;
 }
 
 .hover\:text-stone-600:hover{
