@@ -172,6 +172,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),  # Dossier source des fichiers statiques
 ]
 
+NPM_BIN_PATH = '/opt/homebrew/bin/npm'
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Default primary key field type
