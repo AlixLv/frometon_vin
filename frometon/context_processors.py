@@ -3,7 +3,6 @@ from products.models import Cheese, Wine
 
 def get_cheeses(request):
     cheeses = Cheese.objects.all()
-    print("🥠 ", cheeses)
     return {'cheeses': cheeses}
 
 

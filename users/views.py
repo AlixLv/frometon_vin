@@ -64,7 +64,7 @@ def register_view(request):
 
 
 def home(request):
-    print("🔥 ", request.user.id)
+    #print("🔥 ", request.user.id)
     # on récupère le texte de l'input
     query_dict = request.GET
     query = query_dict.get("q")
@@ -73,7 +73,7 @@ def home(request):
     if query is not None:
         try:
             cheeses_to_display = get_list_or_404(Cheese.objects.filter(name__icontains=query)) 
-            print("🐶 ", cheeses_to_display, type(cheeses_to_display))
+            print("🧀 cheeses to display:", cheeses_to_display, type(cheeses_to_display))
              
             context = {
                 "cheeses": cheeses_to_display,
@@ -84,7 +84,7 @@ def home(request):
         except Http404:
                 try:
                     wines_to_display = get_list_or_404(Wine.objects.filter(name__icontains=query))
-                    print("🐱", wines_to_display)
+                    print("🍷 wines to display: ", wines_to_display)
                 
                     context = {
                         "wines": wines_to_display,

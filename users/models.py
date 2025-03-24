@@ -1,20 +1,20 @@
-from django.contrib.auth.models import AbstractUser, BaseUserManager
+from django.contrib.auth.models import AbstractUser, UserManager
 from django.db import models
 from products.models import Pairing
 
 
-class BaseUserManager(BaseUserManager):
-    def get_all_users(self):
-        return self.objects.all()
-
-
 class UserInfoManager(models.Manager):
-    # def get_user_info(self, id):
-    #     return self.filter(id=id)
-    
     def get_by_natural_key(self, username):
         return self.get(username = username)
 
+
+class CustomUserManager(UserManager):
+    def create_user(self, username, email =None, password =None, **extra_fields):
+        if not email:
+            raise ValueError("L'adresse email est obligatoire")
+
+        return super().create_user(username, email, password, **extra_fields)
+    
 
 #AbstractUser = classe de base qui contient tous les champs et méthodes de User mais n'est pas elle-même un modèle concret
 #AbstractUser est conçu spécifiquement pour ce cas d'usage : créer un modèle User personnalisé
@@ -22,8 +22,9 @@ class UserInfoManager(models.Manager):
 #override sur classe AbstractUser pour rendre champs email obligatoire
 class CustomUser(AbstractUser):
     email = models.EmailField('email address', unique=True, blank=False)
+    
     # Manager #
-    objects = BaseUserManager()
+    objects = CustomUserManager()
     user_info = UserInfoManager()
     
     def __str__(self):
