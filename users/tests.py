@@ -1,6 +1,7 @@
-from django.test import TestCase
+from django.test import TestCase, RequestFactory, Client
 from django.contrib.auth import get_user_model
 from django.urls import reverse
+from products.models import Cheese, Wine
 
 class UsersTests(TestCase):
     
@@ -47,3 +48,6 @@ class UsersTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.context['username'], 'testuser')
         self.assertEqual(response.context['email'], 'normal@user.com')
+        
+  
+    
