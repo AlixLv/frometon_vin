@@ -67,6 +67,7 @@ def home(request):
     #print("🔥 ", request.user.id)
     # on récupère le texte de l'input
     query_dict = request.GET
+    print("🍋 query dict: ", query_dict)
     query = query_dict.get("q")
     
     # on vérifie qu'on reçoit bien la data:
