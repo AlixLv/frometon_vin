@@ -4,3 +4,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* indiquer ici les styles s'appliquant à tout le site */
+
+@theme {
+    --font-buntu: Ubuntu, sans;
+}
+
+input[type="submit"], button {
+    border-width: 0.1rem; 
+    --tw-border-opacity: 1;
+    border-color: rgb(251 146 60 / var(--tw-border-opacity, 1)) /* #fb923c */;
+    background-color: 'gradient-to-br';
+    background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+    --tw-gradient-from: #ec4899 var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(236 72 153 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    --tw-gradient-to: #fb923c var(--tw-gradient-to-position);
+    border-radius: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+
