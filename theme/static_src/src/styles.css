@@ -7,8 +7,40 @@
 
 /* indiquer ici les styles s'appliquant à tout le site */
 
-@theme {
-    --font-buntu: Ubuntu, sans;
+
+@layer base {
+    body{
+        font-family: Ubuntu, sans;
+    } 
+
+    h1 {
+        font-weight: 600;
+        font-size: 1.124rem;
+        line-height: 1.75rem;
+    }
+}
+
+@layer components {
+    .card {
+        max-height: 100%;
+        width: 33.333333%;
+        padding: 1rem;
+        border-width: 2px;
+        border-radius: 0.5rem;
+        --tw-border-opacity: 1;
+        border-color: rgb(100 116 139 / var(--tw-border-opacity, 1));
+        --tw-shadow: 6px 6px rgba(0, 98, 90, 0.4);
+        --tw-shadow-colored: 6px 6px var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    }
+
+    .position-card {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 input[type="submit"], button {
