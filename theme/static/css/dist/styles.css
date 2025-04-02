@@ -751,6 +751,16 @@ select{
   outline: 1px auto -webkit-focus-ring-color;
 }
 
+body{
+  font-family: Ubuntu, sans;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 1.124rem;
+  line-height: 1.75rem;
+}
+
 .container{
   width: 100%;
 }
@@ -783,6 +793,27 @@ select{
   .container{
     max-width: 1536px;
   }
+}
+
+.card {
+  max-height: 100%;
+  width: 33.333333%;
+  padding: 1rem;
+  border-width: 2px;
+  border-radius: 0.5rem;
+  --tw-border-opacity: 1;
+  border-color: rgb(100 116 139 / var(--tw-border-opacity, 1));
+  --tw-shadow: 6px 6px rgba(0, 98, 90, 0.4);
+  --tw-shadow-colored: 6px 6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.position-card {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .sr-only{
@@ -950,10 +981,6 @@ select{
   display: none;
 }
 
-.h-1\/3{
-  height: 33.333333%;
-}
-
 .h-3\/5{
   height: 60%;
 }
@@ -972,10 +999,6 @@ select{
 
 .w-4{
   width: 1rem;
-}
-
-.w-4\/12{
-  width: 33.333333%;
 }
 
 .w-6\/12{
@@ -1036,6 +1059,10 @@ select{
 
 .content-start{
   align-content: flex-start;
+}
+
+.items-start{
+  align-items: flex-start;
 }
 
 .items-center{
@@ -1177,10 +1204,6 @@ select{
   font-family: Ubuntu, sans;
 }
 
-.font-mono{
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
-
 .font-serif{
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
@@ -1256,10 +1279,6 @@ select{
 
 .line-through{
   text-decoration-line: line-through;
-}
-
-.caret-pink-500{
-  caret-color: #ec4899;
 }
 
 .shadow{
@@ -1591,10 +1610,6 @@ select{
 
 /* indiquer ici les styles s'appliquant à tout le site */
 
-@theme {
-  --font-buntu: Ubuntu, sans;
-}
-
 input[type="submit"], button {
   border-width: 0.1rem;
   --tw-border-opacity: 1;
@@ -1612,6 +1627,11 @@ input[type="submit"], button {
   padding-bottom: 0.2rem;
 }
 
+.hover\:bg-\[\#FF6542\]:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 101 66 / var(--tw-bg-opacity, 1));
+}
+
 .hover\:text-stone-600:hover{
   --tw-text-opacity: 1;
   color: rgb(87 83 78 / var(--tw-text-opacity, 1));
@@ -1619,15 +1639,6 @@ input[type="submit"], button {
 
 .hover\:underline:hover{
   text-decoration-line: underline;
-}
-
-.focus\:border-2:focus{
-  border-width: 2px;
-}
-
-.focus\:border-pink-500:focus{
-  --tw-border-opacity: 1;
-  border-color: rgb(236 72 153 / var(--tw-border-opacity, 1));
 }
 
 .focus\:bg-slate-100:focus{

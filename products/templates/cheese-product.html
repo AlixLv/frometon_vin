@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1 class="font-semibold text-lg">{{ product_object.name }}</h1>
-    <br/>
-    <h2>Famille : {{ product_object.family }}</h2>
-    <p>Région : {{ product_object.region }}</p>
-    <p>Description : {{ product_object.description }}</p>
-    <br/>
+<div class="position-card">
+    <div class="card flex flex-col justify-center items-start">
+        <h1>{{ product_object.name }}</h1>
+        <br/>
+        <p>Famille : {{ product_object.family }}</p>
+        <p>Région : {{ product_object.region }}</p>
+        <p>Description : {{ product_object.description }}</p>
+    </div> 
+    <br/>   
     <!-- envoi du nom du product via un formulaire -->
     <form action="{% url 'pairing' %}" method="get">
         <input type="hidden" name="product_name" value="{{ product_object.name }}">
         <button type="submit" class="border-2 border-orange-400 rounded-lg p-1">Trouver un accord</button>
     </form>
-
+</div>
 {% endblock content %}

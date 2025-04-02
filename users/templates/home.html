@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="h-screen flex flex-col justify-center items-center gap-y-10">
+<div class="position-card gap-y-10">
     {% if user.is_authenticated %}
-    <div class="h-1/3 w-4/12 p-4 flex items-center justify-center border-2 rounded-lg border-slate-500 shadow-[6px_6px_rgba(0,_98,_90,_0.4)] inset-shadow-lg ">
+    <div class="card flex items-center justify-center">
         <form method="get">
             {% csrf_token %}
             <p class="text-lg mb-3">Rechercher un produit</p>
@@ -16,12 +16,12 @@
         {% if wines is not None or cheeses is not None %}  
             <ul>
                 {% for wine in wines %}   
-                        <li><a href="{% url 'wine-product' id=wine.id %}" class="hover:underline"> {{ wine.name }}, {{ wine.appellation }}, {{ wine.color }} </a></li>
+                        <li><a href="{% url 'wine-product' id=wine.id %}" class="hover:underline hover:bg-[#FF6542]"> {{ wine.name }}, {{ wine.appellation }}, {{ wine.color }} </a></li>
                 {% endfor %} 
             </ul>
             <ul>
                 {% for cheese in cheeses %}   
-                    <li><a href="{% url 'cheese-product' id=cheese.id %}"class="hover:underline">  {{ cheese.name }}, {{ cheese.region }}, {{ cheese.type_of_milk }} </a></li>
+                    <li><a href="{% url 'cheese-product' id=cheese.id %}"class="hover:underline hover:bg-[#FF6542]">  {{ cheese.name }}, {{ cheese.region }}, {{ cheese.type_of_milk }} </a></li>
                 {% endfor %} 
             </ul> 
         {% else %} 
