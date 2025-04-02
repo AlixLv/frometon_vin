@@ -16,12 +16,12 @@
         {% if wines is not None or cheeses is not None %}  
             <ul>
                 {% for wine in wines %}   
-                        <li><a href="{% url 'wine-product' id=wine.id %}" class="hover:underline hover:bg-[#FF6542]"> {{ wine.name }}, {{ wine.appellation }}, {{ wine.color }} </a></li>
+                        <li><a href="{% url 'wine-product' id=wine.id %}" class="hover:see-product"> {{ wine.name }}, {{ wine.appellation }}, {{ wine.color }} </a></li>
                 {% endfor %} 
             </ul>
             <ul>
                 {% for cheese in cheeses %}   
-                    <li><a href="{% url 'cheese-product' id=cheese.id %}"class="hover:underline hover:bg-[#FF6542]">  {{ cheese.name }}, {{ cheese.region }}, {{ cheese.type_of_milk }} </a></li>
+                    <li><a href="{% url 'cheese-product' id=cheese.id %}"class="hover:see-product">  {{ cheese.name }}, {{ cheese.region }}, {{ cheese.type_of_milk }} </a></li>
                 {% endfor %} 
             </ul> 
         {% else %} 
