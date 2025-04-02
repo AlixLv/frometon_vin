@@ -1,18 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
-    <p>{{ searched_product.name }} s'accorde avec :</p>
-    {% for pairing, product in pairings.items %}
-        {% for prod in product %}
-            {% if product_type == "cheese" %}
-                <p>- <a href="{% url 'wine-product' id=prod.wine.id %}" class="hover:underline">{{ prod.wine.name }}</a></p> 
-            {% else %}
-                <p>- <a href="{% url 'cheese-product' id=prod.cheese.id %}" class="hover:underline">{{ prod.cheese.name }}</a></p> 
-            {% endif %}    
-                <form action="{% url 'add-favourite' %}" method="post">
+<div class="h-screen position-card">
+    <div class="min-h-2/5 max-h-full max-w-full grid justify-between content-around gap-2">
+        <h2>{{ searched_product.name }} s'accorde avec :</h2> 
+        {% for pairing, product in pairings.items %}
+            {% for prod in product %}
+        <div class="col-start-1">    
+                {% if product_type == "cheese" %}
+                    <p>- <a href="{% url 'wine-product' id=prod.wine.id %}" class="hover:see-product">{{ prod.wine.name }}</a></p> 
+                {% else %}
+                    <p>- <a href="{% url 'cheese-product' id=prod.cheese.id %}" class="hover:see-product">{{ prod.cheese.name }}</a></p> 
+                {% endif %}  
+        </div>  
+        <div class="col-end-4">       
+            <form action="{% url 'add-favourite' %}" method="post">
                 {% csrf_token %}
                 <input type="hidden" name="favourite_pairing" value="{{ pairing }}">
-                <button type="submit" class="border-2 border-orange-400 rounded-lg p-1">Ajouter aux favoris</button>  
+                <button type="submit" class="">Ajouter aux favoris</button>  
             </form>        
+            {% endfor %}
+        </div>     
         {% endfor %}
-    {% endfor %}
+    </div>
+</div>    
 {% endblock content %}

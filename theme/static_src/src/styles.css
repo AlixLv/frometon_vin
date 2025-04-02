@@ -18,6 +18,16 @@
         font-size: 1.124rem;
         line-height: 1.75rem;
     }
+
+    h2 {
+        font-weight: 400;
+        font-size: 1.124rem;
+    }
+
+
+    p{
+        margin-bottom: 0.7rem;
+    }
 }
 
 @layer components {
@@ -40,6 +50,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .see-product {
+        text-decoration-line: underline;
+        --tw-bg-opacity: 1;
+        background-color: rgb(255 101 66 / var(--tw-bg-opacity, 1));
     }
 }
 

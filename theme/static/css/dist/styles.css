@@ -761,6 +761,15 @@ h1 {
   line-height: 1.75rem;
 }
 
+h2 {
+  font-weight: 400;
+  font-size: 1.124rem;
+}
+
+p{
+  margin-bottom: 0.7rem;
+}
+
 .container{
   width: 100%;
 }
@@ -866,6 +875,14 @@ h1 {
 
 .isolate{
   isolation: isolate;
+}
+
+.col-start-1{
+  grid-column-start: 1;
+}
+
+.col-end-4{
+  grid-column-end: 4;
 }
 
 .mx-auto{
@@ -993,6 +1010,10 @@ h1 {
   height: 100vh;
 }
 
+.max-h-full{
+  max-height: 100%;
+}
+
 .w-3\/12{
   width: 25%;
 }
@@ -1003,6 +1024,10 @@ h1 {
 
 .w-6\/12{
   width: 50%;
+}
+
+.max-w-full{
+  max-width: 100%;
 }
 
 .flex-shrink{
@@ -1061,6 +1086,10 @@ h1 {
   align-content: flex-start;
 }
 
+.content-around{
+  align-content: space-around;
+}
+
 .items-start{
   align-items: flex-start;
 }
@@ -1073,8 +1102,16 @@ h1 {
   justify-content: center;
 }
 
+.justify-between{
+  justify-content: space-between;
+}
+
 .justify-evenly{
   justify-content: space-evenly;
+}
+
+.gap-2{
+  gap: 0.5rem;
 }
 
 .gap-4{
@@ -1627,7 +1664,8 @@ input[type="submit"], button {
   padding-bottom: 0.2rem;
 }
 
-.hover\:bg-\[\#FF6542\]:hover{
+.hover\:see-product:hover {
+  text-decoration-line: underline;
   --tw-bg-opacity: 1;
   background-color: rgb(255 101 66 / var(--tw-bg-opacity, 1));
 }
