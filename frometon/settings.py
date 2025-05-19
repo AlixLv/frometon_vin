@@ -172,7 +172,8 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Dossier où collectstatic mettra les fichiers
 
 # Configuration de Whitenoise pour la compression et le cache
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 NPM_BIN_PATH = '/opt/homebrew/bin/npm'
 
