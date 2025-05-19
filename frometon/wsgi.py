@@ -15,8 +15,8 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'frometon.settings')
 
 try:
     application = get_wsgi_application()
-    print("🍉 ", application)
-    # connecting Django app on Vercel
+    print("🍉  application: ", application)
+    # connecting Django app on Vercel.app
     app = application 
 except:
-    print("An error occurred")   
+    print("❌ An error occurred")   
