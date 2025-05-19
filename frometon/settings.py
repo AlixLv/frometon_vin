@@ -39,8 +39,6 @@ SECRET_KEY = os.getenv('SUPABASE_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
 AUTH_USER_MODEL = 'users.CustomUser'
 
 ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app", ".now.sh", "*"]
@@ -165,12 +163,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'  # URL pour accéder aux fichiers statiques
-# defines where we're going to serve the static files from when we're in the browser
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Dossier où collectstatic mettra les fichiers
 # Indication à Django pour trouver le dossier static, situé dans le BASE_DIR frometon
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # Dossier source des fichiers statiques
-]
+    os.path.join(BASE_DIR, 'static')] # Dossier source des fichiers statiques
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Dossier où collectstatic mettra les fichiers
+
 
 NPM_BIN_PATH = '/opt/homebrew/bin/npm'
 

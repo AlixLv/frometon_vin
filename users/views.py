@@ -19,7 +19,6 @@ def login_view(request):
             email = form.cleaned_data['email']
             print("🦋 ", email)
             password = form.cleaned_data['password']
-            print("🦋 ", password)
             #fonction authenticate() vérifie les données postées, si les données sont valides, une instance de la classe User est retournée
             user = authenticate(request, username=username, email=email, password=password)
             print("🦄 ", request.user, request.user.username)
