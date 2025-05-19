@@ -37,7 +37,7 @@ SUPABASE_KEY = os.getenv('SUPABASE_KEY')
 SECRET_KEY = os.getenv('SUPABASE_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
