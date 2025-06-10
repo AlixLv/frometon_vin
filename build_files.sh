@@ -1,6 +1,9 @@
 #!/bin/bash
 echo "BUILD START"
 
+export PATH="/vercel/.local/bin:/python312/bin:/python39/bin:$PATH"
+
+
 # Afficher l'environnement
 echo "Python version:"
 python3 --version
