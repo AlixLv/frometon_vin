@@ -7,8 +7,8 @@ export PATH="/vercel/.local/bin:/python312/bin:/python39/bin:$PATH"
 # Afficher l'environnement
 echo "Python version:"
 python3 --version
-echo "Pip version:"
-pip --version
+# echo "Pip version:"
+# pip --version
 echo "Node version:"
 node --version
 echo "NPM version:"
@@ -16,8 +16,9 @@ npm --version
 
 # Vérifier que les dépendances sont installées
 echo "Installing dependencies..."
-python3 -m pip install --upgrade pip
+#python3 -m pip install --upgrade pip
 python3 -m pip install -r requirements.txt
+python3 -m pip install whitenoise 
 
 # Vérifier l'installation de django-environ
 echo "Checking django-environ..."
