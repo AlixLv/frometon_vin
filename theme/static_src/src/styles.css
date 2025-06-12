@@ -57,9 +57,11 @@
         --tw-bg-opacity: 1;
         background-color: rgb(255 101 66 / var(--tw-bg-opacity, 1));
     }
+
 }
 
-input[type="submit"], button {
+
+input[type="submit"], button{
     border-width: 0.1rem; 
     --tw-border-opacity: 1;
     border-color: rgb(251 146 60 / var(--tw-border-opacity, 1)) /* #fb923c */;
@@ -74,5 +76,6 @@ input[type="submit"], button {
     padding-right: 0.5rem;
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
+    cursor: pointer;
 }
 

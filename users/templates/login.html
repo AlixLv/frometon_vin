@@ -1,19 +1,44 @@
-{% block content %}
-    <!-- novalidate permet d'empêcher la validation automatique du navigateur et forcer celle de Django  -->
-    <form method="post" novalidate>
-        <!-- template de protection contre les injection de code malaicieux à travers le bouton d'un formulaire ou du javascript -->
-        {% csrf_token %}
-        <h2>Login</h2>
-        {% if messages %}
-            {% for message in messages %}
-                <h4>{{ message }}</h4>
-            {% endfor %}
-        {% endif %}    
-        <!-- le formulaire Django est affiché comme des paragraphes HTML avec les balises <p> -->
-        {{ form.as_p }}
-        <input type="submit" value="Se connecter"/>
-    </form>
-    <a href="{% url 'register' %}">
-        <input type="submit" value="S'inscrire" />
-    </a>
-{% endblock content %}
+{% load formify %}
+<html>
+    <head>
+        <title>Login</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    </head>
+    <body>
+        <!-- novalidate permet d'empêcher la validation automatique du navigateur et forcer celle de Django  -->
+        <div class="h-dvh flex flex-col justify-center items-center">
+            <div class="w-full max-w-md">
+            <form method="post" novalidate>
+                <!-- template de protection contre les injection de code malaicieux à travers le bouton d'un formulaire ou du javascript -->
+                {% csrf_token %}
+                
+                {% if messages %}
+                    {% for message in messages %}
+                        <h4>{{ message }}</h4>
+                    {% endfor %}
+                {% endif %} 
+
+                <div class="font-medium">
+                    {% render_field form.username %}
+                </div>
+                <div class="font-medium">
+                    {% render_field form.email %}
+                </div>
+                <div class="font-medium">
+                    {% render_field form.password %}
+                </div> 
+                <div class="pt-2 text-center">
+                    <input type="submit" value="Se connecter" class="cursor-pointer border-2 border-orange-400 bg-gradient-to-br from-pink-500 to-orange-400 rounded-lg p-1 px-2"/>
+                </div>   
+            </form>
+                <div class="text-center mt-8">
+                    <a href="{% url 'register' %}">
+                        <input type="button" value="S'inscrire" class="cursor-pointer border-2 border-emerald-600 bg-gradient-to-br from-emerald-500 to-emerald-200 rounded-lg p-1 px-2"/>
+                    </a>
+                </div>
+            </div>    
+        </div>
+    </body>
+</html>
+
+

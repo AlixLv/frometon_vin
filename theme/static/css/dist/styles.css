@@ -890,6 +890,10 @@ p{
   margin-right: auto;
 }
 
+.mb-2{
+  margin-bottom: 0.5rem;
+}
+
 .mb-3{
   margin-bottom: 0.75rem;
 }
@@ -920,6 +924,10 @@ p{
 
 .mt-10{
   margin-top: 2.5rem;
+}
+
+.mt-8{
+  margin-top: 2rem;
 }
 
 .block{
@@ -1006,12 +1014,20 @@ p{
   height: 80%;
 }
 
+.h-dvh{
+  height: 100dvh;
+}
+
 .h-screen{
   height: 100vh;
 }
 
 .max-h-full{
   max-height: 100%;
+}
+
+.max-h-lvh{
+  max-height: 100lvh;
 }
 
 .w-3\/12{
@@ -1026,8 +1042,16 @@ p{
   width: 50%;
 }
 
+.w-full{
+  width: 100%;
+}
+
 .max-w-full{
   max-width: 100%;
+}
+
+.max-w-md{
+  max-width: 28rem;
 }
 
 .flex-shrink{
@@ -1060,6 +1084,12 @@ p{
 
 .resize{
   resize: both;
+}
+
+.appearance-none{
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 .grid-cols-2{
@@ -1128,6 +1158,10 @@ p{
   margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
 }
 
+.overflow-clip{
+  overflow: clip;
+}
+
 .truncate{
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1158,9 +1192,24 @@ p{
   border-width: 2px;
 }
 
+.border-emerald-600{
+  --tw-border-opacity: 1;
+  border-color: rgb(5 150 105 / var(--tw-border-opacity, 1));
+}
+
+.border-gray-300{
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity, 1));
+}
+
 .border-orange-400{
   --tw-border-opacity: 1;
   border-color: rgb(251 146 60 / var(--tw-border-opacity, 1));
+}
+
+.border-red-300{
+  --tw-border-opacity: 1;
+  border-color: rgb(252 165 165 / var(--tw-border-opacity, 1));
 }
 
 .border-slate-500{
@@ -1183,6 +1232,15 @@ p{
   background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
 }
 
+.bg-gray-50\/50{
+  background-color: rgb(249 250 251 / 0.5);
+}
+
+.bg-red-50{
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 242 242 / var(--tw-bg-opacity, 1));
+}
+
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
@@ -1192,10 +1250,20 @@ p{
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
 
+.from-emerald-500{
+  --tw-gradient-from: #10b981 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(16 185 129 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .from-pink-500{
   --tw-gradient-from: #ec4899 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(236 72 153 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-emerald-200{
+  --tw-gradient-to: #a7f3d0 var(--tw-gradient-to-position);
 }
 
 .to-orange-400{
@@ -1220,9 +1288,35 @@ p{
   padding-right: 1rem;
 }
 
+.py-2{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 .py-2\.5{
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
+}
+
+.py-3{
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.pb-3{
+  padding-bottom: 0.75rem;
+}
+
+.pl-1{
+  padding-left: 0.25rem;
+}
+
+.pl-2{
+  padding-left: 0.5rem;
+}
+
+.pt-2{
+  padding-top: 0.5rem;
 }
 
 .pt-3{
@@ -1299,6 +1393,26 @@ p{
 
 .tracking-normal{
   letter-spacing: 0em;
+}
+
+.text-gray-600{
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+}
+
+.text-gray-700{
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity, 1));
+}
+
+.text-gray-900{
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity, 1));
+}
+
+.text-red-600{
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity, 1));
 }
 
 .text-stone-950{
@@ -1593,6 +1707,10 @@ p{
   s: e;
 }
 
+.\[seq_start\:pos\]{
+  seq_start: pos;
+}
+
 .\[start\:end\]{
   start: end;
 }
@@ -1647,7 +1765,7 @@ p{
 
 /* indiquer ici les styles s'appliquant à tout le site */
 
-input[type="submit"], button {
+input[type="submit"], button{
   border-width: 0.1rem;
   --tw-border-opacity: 1;
   border-color: rgb(251 146 60 / var(--tw-border-opacity, 1)) /* #fb923c */;
@@ -1662,12 +1780,49 @@ input[type="submit"], button {
   padding-right: 0.5rem;
   padding-top: 0.2rem;
   padding-bottom: 0.2rem;
+  cursor: pointer;
 }
 
 .hover\:see-product:hover {
   text-decoration-line: underline;
   --tw-bg-opacity: 1;
   background-color: rgb(255 101 66 / var(--tw-bg-opacity, 1));
+}
+
+.file\:mr-4::file-selector-button{
+  margin-right: 1rem;
+}
+
+.file\:cursor-pointer::file-selector-button{
+  cursor: pointer;
+}
+
+.file\:border-none::file-selector-button{
+  border-style: none;
+}
+
+.file\:bg-gray-50::file-selector-button{
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
+}
+
+.file\:px-4::file-selector-button{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.file\:py-2::file-selector-button{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.file\:font-medium::file-selector-button{
+  font-weight: 500;
+}
+
+.file\:text-gray-900::file-selector-button{
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity, 1));
 }
 
 .hover\:text-stone-600:hover{
@@ -1684,6 +1839,35 @@ input[type="submit"], button {
   background-color: rgb(241 245 249 / var(--tw-bg-opacity, 1));
 }
 
+.focus\:outline-none:focus{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus-visible\:outline:focus-visible{
+  outline-style: solid;
+}
+
+.focus-visible\:outline-2:focus-visible{
+  outline-width: 2px;
+}
+
+.focus-visible\:outline-offset-2:focus-visible{
+  outline-offset: 2px;
+}
+
+.focus-visible\:outline-black:focus-visible{
+  outline-color: #000;
+}
+
+.disabled\:cursor-not-allowed:disabled{
+  cursor: not-allowed;
+}
+
+.disabled\:opacity-75:disabled{
+  opacity: 0.75;
+}
+
 @media (min-width: 1024px){
   .lg\:w-10{
     width: 2.5rem;
@@ -1697,6 +1881,36 @@ input[type="submit"], button {
     --tw-space-x-reverse: 0;
     margin-right: calc(3rem * var(--tw-space-x-reverse));
     margin-left: calc(3rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+}
+
+@media (prefers-color-scheme: dark){
+  .dark\:border-gray-700{
+    --tw-border-opacity: 1;
+    border-color: rgb(55 65 81 / var(--tw-border-opacity, 1));
+  }
+
+  .dark\:bg-gray-900\/50{
+    background-color: rgb(17 24 39 / 0.5);
+  }
+
+  .dark\:text-gray-300{
+    --tw-text-opacity: 1;
+    color: rgb(209 213 219 / var(--tw-text-opacity, 1));
+  }
+
+  .dark\:file\:bg-gray-900::file-selector-button{
+    --tw-bg-opacity: 1;
+    background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
+  }
+
+  .dark\:file\:text-white::file-selector-button{
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  }
+
+  .dark\:focus-visible\:outline-white:focus-visible{
+    outline-color: #fff;
   }
 }
 

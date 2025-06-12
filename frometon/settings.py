@@ -57,7 +57,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',  
     'tailwind',
     'theme',
-    'django_browser_reload'
+    'django_browser_reload',
+    'django_viewcomponent',      
+    'django_formify'     
 ]
 
 MIDDLEWARE = [
@@ -78,7 +80,6 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [BASE_DIR / 'templates'],
-        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -90,6 +91,13 @@ TEMPLATES = [
                 'frometon.context_processors.get_cheeses',
                 'frometon.context_processors.get_wines',
             ],
+            'loaders': [(
+                'django.template.loaders.cached.Loader', [
+                    'django.template.loaders.filesystem.Loader',
+                    'django.template.loaders.app_directories.Loader',
+                    'django_viewcomponent.loaders.ComponentLoader',
+                ]
+            )],
         },
     },
 ]

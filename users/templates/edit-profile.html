@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
+{% load formify %}
 {% block content %}
-<h1>Modifier mon profil</h1>
-<form method="POST" novalidate>
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Enregistrer" class="border-2 border-orange-400 rounded-lg">
-</form>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<h1 class="font-semibold pb-3 pl-1">Modifier mon profil</h1>
+<div class="max-h-lvh max-w-md pl-2">
+    <form method="POST" novalidate>
+        {% csrf_token %}
+        {% render_form form %}
+        <input type="submit" value="Enregistrer" class="cursor-pointer">
+    </form>
+</div>
+
 {% endblock content %}
