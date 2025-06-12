@@ -1,9 +1,35 @@
-{% block content %}
-    <h1>Créez votre compte</h1>
-    <form method="POST" novalidate>
-        {% csrf_token %}
-        <h2>Inscription</h2>
-        {{ form.as_p }}
-        <input type="submit" value="S'inscrire" />
-    </form>
-{% endblock content %}
+{% load formify %}
+<html>
+    <head>
+        <title>Register</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    </head>
+    <body>
+        <div class="h-dvh flex flex-col justify-center items-center">
+        <h1 class="font-semibold pb-3 pl-1">Créez votre compte</h1>   
+            <div class="w-full max-w-md">
+                <form method="POST" novalidate>
+                    {% csrf_token %}
+                    <div class="font-medium">
+                        {% render_field form.username %}
+                    </div>
+                    <div class="font-medium">
+                        {% render_field form.email %}
+                    </div>
+                    <div class="font-medium">
+                        {% render_field form.password1 %}
+                    </div>
+                    <div class="font-medium">
+                        {% render_field form.password2 %}
+                    </div>
+                    <div class="text-center pt-2">
+                        <input type="submit" value="S'inscrire" class="cursor-pointer border-2 border-orange-400 bg-gradient-to-br from-pink-500 to-orange-400 rounded-lg p-1 px-2"/>
+                    </div> 
+                </form>
+            </div>    
+        </div>
+    </body>
+</html>
+
+
+

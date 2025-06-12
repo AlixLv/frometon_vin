@@ -19,7 +19,7 @@ class RegisterForm(UserCreationForm):
     # *args, **kwargs permettent de définir une fonction avec un nombre inconnu et variable d'arguements
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['email'].label = "email"
+        self.fields['email'].label = "Email"
         
     class Meta:
         #get_user_model() permet d'utiliser la class personnalisée CustomUser
