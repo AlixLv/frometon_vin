@@ -2,9 +2,9 @@
     {% block content %}
         {% if grouped_favourites %}
             {% for family, favourite in grouped_favourites.items %}
-                <p class="text-lg font-ubuntu mt-10">{{ family }}</p>
+                <h4>{{ family }}</h4>
                     {% for fav in favourite %}
-                        <div class="flex flex-row items-center mb-6"> 
+                        <div class="flex flex-row items-center mb-6 ml-3"> 
                             <div class="mr-8">
                                 <p>Fromage : {{ fav.pairing.cheese.name }}</p>
                                 <p>Vin : {{ fav.pairing.wine.name }} {{ fav.pairing.wine.year }}</p>

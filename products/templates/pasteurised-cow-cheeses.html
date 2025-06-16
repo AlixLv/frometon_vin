@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
     {% block content %}
-        <h2 class="font-semibold text-xl">Fromage au lait de vache pasteurisé</h2>
+        <div class="position-card-long-list">
+        <h2 class="font-semibold text-xl mb-6">Fromage au lait de vache pasteurisé</h2>
         {% for cheese in cheeses %}
             {% if cheese.type_of_milk == "Vache pasteurisé" %}
-                <h3 class="font-semibold">{{ cheese.name }}</h3>
-                <p>{{ cheese.family }}</p>
-                <p>{{ cheese.type_of_milk }}</p>
-                <p>{{ cheese.region }}</p>
-                <p>{{ cheese.description }}</p>
-                <br />
+                <div class="card flex flex-col justify-center items-start">
+                    <h5>{{ cheese.name }}</h5>
+                    <p>Famille : {{ cheese.family }}</p>
+                    <p>Région : {{ cheese.region }}</p>
+                    <p>Description : {{ cheese.description }}</p>
+                </div>  
+                <br/>     
             {% endif %}  
-        {% endfor %}      
+        {% endfor %}  
+        </div>    
     {% endblock content %}

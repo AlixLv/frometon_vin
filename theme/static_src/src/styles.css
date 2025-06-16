@@ -24,6 +24,20 @@
         font-size: 1.124rem;
     }
 
+    h4 {
+        font-weight: 600;
+        font-size: 1.2rem;
+        margin-left: 0.7rem;
+        margin-bottom: 0.7rem;
+        color: oklch(40.8% 0.153 2.432);
+    }
+
+    h5 {
+        font-size: medium;
+        font-weight: 600;
+        margin-bottom: 0.7rem;
+    }
+
 
     p{
         margin-bottom: 0.7rem;
@@ -45,11 +59,19 @@
     }
 
     .position-card {
-        height: 100vh;
+        height: 80vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .position-card-long-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 3rem;
     }
 
     .see-product {

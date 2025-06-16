@@ -1,12 +1,12 @@
 <!-- indication à VSCode qu'il s'agit bien d'un fichier Django HTML -->
 {# django #}
-{% load static tailwind_tags %}
+{% load tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {% block head %}<title>Frometon</title>{% endblock %}
+        {% block head %}<title>Frometon</title>{% endblock head %}
         {% tailwind_css %}
     </head> 
     <body class="h-screen">  
@@ -33,11 +33,11 @@
                             <option value="{% url 'rose-wines' %}">Vins rosés</option>
                         </select>          
                 </nav>
-                <br/>   
+                <div class="pb-10"></div>
             </header> 
             {% endif %}   
-        {% block content %}
-        {% endblock %}
-        {% endblock %}
+            {% block content %}
+            {% endblock content%}
+        {% endblock body %}
     </body>
 </html>
